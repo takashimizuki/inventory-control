@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <diagram>
+	<dbsetting>
+		<dbsystem>MySQL</dbsystem>
+		<server>192.168.157.129</server>
+		<port>3306</port>
+		<database>elsamariadb</database>
+		<user>root</user>
+		<password>mariadb</password>
+		<use_default_driver>true</use_default_driver>
+		<url>jdbc:mysql://192.168.157.129:3306/elsamariadb</url>
+		<driver_class_name>com.mysql.jdbc.Driver</driver_class_name>
+	</dbsetting>
 	<page_setting>
 		<direction_horizontal>true</direction_horizontal>
 		<scale>100</scale>
@@ -138,7 +149,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2017-06-23 10:16:19</creation_date>
-			<updated_date>2017-06-23 12:46:10</updated_date>
+			<updated_date>2017-06-23 13:17:46</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -188,7 +199,7 @@
 			<char_semantics>false</char_semantics>
 			<description></description>
 			<logical_name>消費期限</logical_name>
-			<physical_name>date</physical_name>
+			<physical_name>consumptionData</physical_name>
 			<type>date</type>
 		</word>
 		<word>
@@ -464,7 +475,7 @@
 				<font_name>Yu Gothic UI</font_name>
 				<font_size>9</font_size>
 			<x>60</x>
-			<y>202</y>
+			<y>216</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -560,164 +571,6 @@
 		</table>
 		<table>
 			<id>2</id>
-			<height>109</height>
-			<width>188</width>
-				<font_name>Yu Gothic UI</font_name>
-				<font_size>9</font_size>
-			<x>85</x>
-			<y>360</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>0</id>
-					<source>3</source>
-					<target>2</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>consumption</physical_name>
-			<logical_name>消費期限テーブル</logical_name>
-			<description></description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<id>5</id>
-					<referenced_column>8</referenced_column>
-					<relation>0</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>integer</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>6</id>
-					<referenced_column>9</referenced_column>
-					<relation>0</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name>purchaseDate</physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>0</word_id>
-					<id>7</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<nocache>false</nocache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>3</id>
 			<height>149</height>
 			<width>180</width>
 				<font_name>Yu Gothic UI</font_name>
@@ -731,9 +584,9 @@
 			</color>
 			<connections>
 				<relation>
-					<id>1</id>
+					<id>0</id>
 					<source>0</source>
-					<target>3</target>
+					<target>2</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
@@ -753,9 +606,9 @@
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 				<relation>
-					<id>2</id>
+					<id>1</id>
 					<source>1</source>
-					<target>3</target>
+					<target>2</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
 						<target_xp>-1</target_xp>
@@ -783,9 +636,9 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<id>8</id>
+					<id>5</id>
 					<referenced_column>3</referenced_column>
-					<relation>2</relation>
+					<relation>1</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -818,7 +671,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>1</word_id>
-					<id>9</id>
+					<id>6</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -850,9 +703,9 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>10</id>
+					<id>7</id>
 					<referenced_column>0</referenced_column>
-					<relation>1</relation>
+					<relation>0</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -885,7 +738,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>8</word_id>
-					<id>11</id>
+					<id>8</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -918,12 +771,45 @@
 				</normal_column>
 				<normal_column>
 					<word_id>7</word_id>
-					<id>12</id>
+					<id>9</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
 					<type>integer</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>false</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<nocache>false</nocache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>0</word_id>
+					<id>10</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>date</type>
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
