@@ -9,14 +9,6 @@
      <body>
 	 <form action="new-account" method="post">
      <h1>新規</h1>
-		<div>
-			<h3>商品コード</h3>
-			<select name="foodsId">
-			<option value="1"></option>
-			<option value="2"></option>
-			<option value="3"></option>
-			</select>
-		</div>
 		<div>		
 			<h3>商品名</h3>
 			<input type="text" name="foodsname">
