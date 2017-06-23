@@ -149,7 +149,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2017-06-23 10:16:19</creation_date>
-			<updated_date>2017-06-23 13:17:46</updated_date>
+			<updated_date>2017-06-23 13:18:38</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -770,13 +770,13 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>7</word_id>
+					<word_id>0</word_id>
 					<id>9</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
-					<type>integer</type>
+					<type>date</type>
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
@@ -803,13 +803,13 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>0</word_id>
+					<word_id>7</word_id>
 					<id>10</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
-					<type>date</type>
+					<type>integer</type>
 					<constraint></constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
