@@ -9,6 +9,7 @@
      <body>
 	 <form action="new-account" method="post">
      <h1>新規</h1>
+     
 		<div>		
 			<h3>商品名</h3>
 			<input type="text" name="foodsname">
