@@ -1,4 +1,4 @@
-package jp.co.comnic.javalesson.inventory.contorl.model;
+package jp.co.comnic.javalesson.inventory.contorl.entity;
 
 import java.io.Serializable;
 
