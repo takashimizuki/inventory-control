@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import jp.co.comnic.javalesson.inventory.control.entity.Account;
 import jp.co.comnic.javalesson.inventory.control.dao.AccountDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
+
 /**
  * <p>ログイン認証処理を実行するActionインターフェイスの実装。</p>
  * 
@@ -42,8 +43,8 @@ public class LoginAction implements Action {
 				
 				// トップページにリダイレクト
 				forwardPath = null;
-//				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
-				response.sendRedirect("/bookStore/Top.jsp");
+				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
+//				response.sendRedirect(".././inventory.control/WebContent/login.jsp");
 				
 			} else {
 				request.setAttribute("error", "[ERROR] Invalid e-mail or password.");
