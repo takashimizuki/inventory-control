@@ -46,6 +46,8 @@ public class LoginAction implements Action {
 				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
 //				response.sendRedirect(".././inventory.control/WebContent/login.jsp");
 				
+				System.out.println("aaaa");
+				
 			} else {
 				request.setAttribute("error", "[ERROR] Invalid e-mail or password.");
 				forwardPath = "login";
