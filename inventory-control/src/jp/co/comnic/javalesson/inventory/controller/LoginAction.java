@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jp.co.comnic.javalesson.inventory.contorl.model.Account;
+import jp.co.comnic.javalesson.inventory.control.entity.Account;
 import jp.co.comnic.javalesson.inventory.control.dao.AccountDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
 /**
