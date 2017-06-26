@@ -12,62 +12,17 @@
         <param-value>jp.co.comnic.javalesson.inventory.controller.LoginAction</param-value>
     </context-param>
     
-    <context-param>
-        <param-name>/logout.do</param-name>
-        <param-value>jp.co.comnic.javalesson.inventory.controller.LogoutAction</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>/edit.do</param-name>
-        <param-value>jp.co.comnic.javalesson.inventory.controller.EditAction</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>/new-account.do</param-name>
-        <param-value>jp.co.comnic.javalesson.inventory.controller.NewAccount</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>/new.do</param-name>
-        <param-value>jp.co.comnic.javalesson.inventory.contoroller.New</param-value>
-    </context-param>
-    
     
     <!-- Settings for JSP pages --> 
     <servlet>
         <servlet-name>Login</servlet-name>
         <jsp-file>/login.jsp</jsp-file>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     
-    <servlet>
-        <servlet-name>Edit</servlet-name>
-        <jsp-file>/edit.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Edit</servlet-name>
-        <url-pattern>/edit</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>NewAccount</servlet-name>
-        <jsp-file>/new-account.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>NewAccount</servlet-name>
-        <url-pattern>/newaccount</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>New</servlet-name>
-        <jsp-file>/new.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>New</servlet-name>
-        <url-pattern>/new</url-pattern>
-    </servlet-mapping>
     
 </web-app>

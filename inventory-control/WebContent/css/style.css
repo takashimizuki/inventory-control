@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+body	{font-family: 'Comic Sans MS', cursive;
+		margin: 0}
+		
+h1		{font-size: 38px;
+		margin-top: 0;
+		margin-bottom: 0}
+		
+header	{backgroud-color: #ffffff;
+		border-bottom: solid 1px #aaaaaa;
+		margin-bottom: 30px;
+		-webkit-box-shadow: 0 1px 7px #aaaaaa;
+		padding: 5px}
+
+body	{background-image: url(../photo.jpg);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		background-color: 87cefa}
+
+article	{background-color: #ffffff;
+		text-align: center;
+		width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		border: solid 1px #aaaaaa;
+		padding: 30px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		margin-bottom: 15px;
+		border-radius: 20px}
+		
+div.blocka	{float: left;
+   			width: 50%}
+
+div.blockb	{float: right;
+   			width: 50%}
