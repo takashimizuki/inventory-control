@@ -1,0 +1,9 @@
+<Context>
+    <Resource name="ds/elsamariadb"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://192.168.17.130/elsamariadb"
+              username="root"
+              password="mariadb"
+    />
+</Context>
