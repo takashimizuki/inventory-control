@@ -39,12 +39,14 @@ public class LoginAction implements Action {
 				// セッション管理を開始し、セッションのスコープ・オブジェクトとなるHttpSessionに
 				// 認証済みを表すboolean値とログイン・ユーザー名をセット
 				request.getSession().setAttribute("isAuthenticated", "AUTHENTICATED");
-//				request.getSession().setAttribute("loginUsername", account.getUsername());
+				request.getSession().setAttribute("loginUsername", account.getUsername());
 				
 				// トップページにリダイレクト
 				forwardPath = null;
 				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
 //				response.sendRedirect(".././inventory.control/WebContent/login.jsp");
+				
+				System.out.println("aaaa");
 				
 			} else {
 				request.setAttribute("error", "[ERROR] Invalid e-mail or password.");
