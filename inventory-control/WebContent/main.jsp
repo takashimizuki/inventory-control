@@ -10,6 +10,6 @@
      <body>
      <jsp:include page="header.jsp"></jsp:include>
      <br><br>
-	 <a href="new.jsp"><input type= "submit" value= "新規"></a>
+	 <a href="new.jsp"><input id="submit_buttona" type= "submit" value= "新規"></a>
 	 </body>
 </html>

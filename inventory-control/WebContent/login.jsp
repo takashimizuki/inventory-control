@@ -12,14 +12,26 @@
      <article>
      <form action="login.do" method="post">
 		<h1>ログイン</h1><br>
-		<div>
+		<table>
+		<tr>
+		<th>
 			<h3>メールアドレス</h3>
+		</th>
+		<td>
 			<input type="text" name="email">	
+		</td>
+		</tr>
+		<tr>
+		<th>
 			<h3>パスワード</h3>
+		</th>
+		<td>
 			<input type="password" name="password">
-		</div>
+		</td>
+		</tr>
+		</table>
 		<br><br>
-			<input type= "submit" value= "ログイン">
+			<input id="submit_buttona" type= "submit" value= "ログイン">
 		<br><br>
 			<h3>会員でない方は<a href="new-account.jsp">こちら</a></h3>
 	 </form>

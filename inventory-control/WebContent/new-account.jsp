@@ -12,19 +12,36 @@
      	<article>
         <form action="new-account.do" method="post">
 		<h1>新規会員登録</h1><br>
-		<div>
+		<table>
+		<tr>
+		<th>
 			<h3>メールアドレス</h3>
+		</th>
+		<td>
 			<input type="text" name="email">	
+		</td>
+		<tr>
+		<th>
 			<h3>パスワード</h3>
+		</th>
+		<td>
 			<input type="password" name="password">	
+		</td>
+		<tr>
+		<th>
 			<h3>ユーザー名</h3>
+		</th>
+		<td>
 			<input type="text" name="accountname">
-		</div>
+		</td>
+		</tr>
+		</table>
 		<br><br>
-		<input type="reset" value= "リセット">
-		<input type= "submit" value= "登録">
+		<input id="submit_buttonc" type="reset" value= "リセット">
+		<input id="submit_buttond" type= "submit" value= "登録">
 		</form>
-		<a href="login.jsp"><input type= "submit" value= "キャンセル"></a>
+		<br>		
+		<a href="login.jsp"><input id="submit_buttonb" type= "submit" value= "キャンセル"></a>
 		</article>
      </body>
 </html>

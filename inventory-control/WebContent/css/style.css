@@ -30,9 +30,50 @@ article	{background-color: #ffffff;
 		box-sizing: border-box;
 		margin-bottom: 15px;
 		border-radius: 20px}
-		
-div.blocka	{float: left;
-   			width: 50%}
 
-div.blockb	{float: right;
-   			width: 50%}
+input#submit_buttona {width: 150px;
+					 background-color: #00ff00;
+					 border: solid 1px #aaaaaa;
+					 box-shadow: 2px 2px 30px #aaaaaa;
+					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
+					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
+					 border-radius: 10px;
+					 padding-top: 10px;
+					 padding-bottom: 10px}
+
+input#submit_buttonb {width: 100px;
+					 background-color: #ff0000;
+					 border: solid 1px #aaaaaa;
+					 box-shadow: 2px 2px 30px #aaaaaa;
+					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
+					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
+					 border-radius: 10px;
+					 padding-top: 10px;
+					 padding-bottom: 10px}
+
+input#submit_buttonc {width: 100px;
+					 background-color: #ffd700;
+					 border: solid 1px #aaaaaa;
+					 box-shadow: 2px 2px 30px #aaaaaa;
+					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
+					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
+					 border-radius: 10px;
+					 padding-top: 10px;
+					 padding-bottom: 10px}
+
+input#submit_buttond {width: 100px;
+					 background-color: #00ff00;
+					 border: solid 1px #aaaaaa;
+					 box-shadow: 2px 2px 30px #aaaaaa;
+					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
+					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
+					 border-radius: 10px;
+					 padding-top: 10px;
+					 padding-bottom: 10px}
+					 
+table,th,td			 {margin-left: auto;
+					 margin-right: auto}
+					 
+th	{text-align: left}
+
+td	{text-align: left}
