@@ -14,7 +14,7 @@ import jp.co.comnic.javalesson.inventory.controller.Action;
  * @author M.Yoneyama
  * @version 1.0
  */
-public class InsertAccountDao implements Action {
+public class NewAccountDao implements Action {
 
 	/* (non-Javadoc)
 	 * @see jp.co.comnic.javalesson.webapp.ems.controller.Action#execute(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
@@ -27,7 +27,7 @@ public class InsertAccountDao implements Action {
 		
 		String redirectPath = "../../WebContent/login.jsp"; // 正常処理のリダイレクト先（一覧画面）
 //		response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/login.jsp");
-		String forwardPath = "new"; // 例外発生時のフォワード先（元の登録画面）
+		String forwardPath = "new-account.jsp"; // 例外発生時のフォワード先（元の登録画面）
 		
 		try {
 			
