@@ -43,10 +43,10 @@ public class LoginAction implements Action {
 				
 				// トップページにリダイレクト
 				forwardPath = null;
-				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
-//				response.sendRedirect(".././inventory.control/WebContent/login.jsp");
+				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/main.jsp");
+
 				
-				System.out.println("aaaa");
+//				System.out.println("aaaa");
 				
 			} else {
 				request.setAttribute("error", "[ERROR] Invalid e-mail or password.");
