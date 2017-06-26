@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+
+import jp.co.comnic.javalesson.inventory.contorl.model.Account;
 /**
  * <p>部署テーブルのCRUD操作を実装するDAOクラス</p>
  */
