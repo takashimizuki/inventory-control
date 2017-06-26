@@ -3,6 +3,7 @@
 	<persistence-unit name="inventory-control">
 	
 	   <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+	   <non-jta-data-source>java:comp/env/ds/elsamariadb</non-jta-data-source>
        
         <class>jp.co.comnic.javalesson.inventory.contorl.model.Account</class>
 	
