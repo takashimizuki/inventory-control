@@ -25,6 +25,7 @@ public class NewAccountAction implements Action {
 			throws ServletException, IOException {
 		
 		String servletPath = request.getServletPath();
+		// this string is -> /new-account.do
 		
 		String redirectPath = "login"; // ���폈���̃��_�C���N�g��i�ꗗ��ʁj
 //		response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/login.jsp");
@@ -32,10 +33,11 @@ public class NewAccountAction implements Action {
 		
 		try {
 			
-			// ���N�G�X�g�E�p�X�����񂩂��̃G���e�B�e�B�E�I�u�W�F�N�g�𐶐�
+			// サーブレットパスをコントロールユーティルズに渡し、返り値からインスタンスを生成する
+			//　
 			Object entity = Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)).newInstance();
 			
-			// ���N�G�X�g�E�p�����[�^�̒l���g�p���ăG���e�B�e�B�E�I�u�W�F�N�g�̃t�B�[���h�l��ݒ�
+			// servletRequestとオブジェクトを渡し、エンティティクラスに
 			ControllerUtils.populateEntity(request, entity);
 			
 			// �G���e�B�e�B�E�I�u�W�F�N�g��DAO�ɓn�����ƂŐV�K���R�[�h��DB�ɑ}��

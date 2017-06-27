@@ -26,10 +26,8 @@ public class ControllerUtils {
 	/**
 	 * <p>渡されたサーブレット・パスからエンティティの完全修飾クラス名を生成して返す。</p>
 	 * <p>
-	 * ここで渡されるサーブレット・パスは「/employees/...」のようなものを想定し、この場合、エンティティ・クラス
-	 * の完全修飾名は「jp.co.comnic.javalesson.webapp.ems.entity.employee」となる。
-	 * したがって、サーブレット・パスとエンティティ・クラスとの対応ルールやパッケージ名を変更する場合にはこのメソッドは機能しない
-	 * 点に注意。
+	 * 想定されるサーブレットパスと完全一致の場合のみ正しいクラスネームを返します。
+	 * 一致しない場合は、仮としてアザーを返す。
 	 * </p>
 	 * 
 	 * @param servletPath リクエストURLに含まれるサーブレット・パス 
@@ -39,10 +37,12 @@ public class ControllerUtils {
 		
 		String className = "";
 		
-		if("new-account.do".equals(servletPath)){
+		if("/new-account.do".equals(servletPath)){
 			className = "Account";
-		} else if("new.do".equals(servletPath) || "edit.do".equals(servletPath)){
+		} else if("/new.do".equals(servletPath) || "/edit.do".equals(servletPath)){
 			className = "Purchase";
+		} else{
+			className = "other";
 		}
 		String packageName = "jp.co.comnic.javalesson.inventory.control.entity.";
 
@@ -64,6 +64,7 @@ public class ControllerUtils {
 		Map<String, String> propertyMap = new HashMap<>();
 		for (String key : parameterMap.keySet()) {
 			propertyMap.put(key, parameterMap.get(key)[0]);
+			System.out.println(parameterMap.get(key)[0]);
 		}
 
 		try {
@@ -74,7 +75,8 @@ public class ControllerUtils {
 			
 			// コンバーターの登録
 			ConvertUtils.register(dateConverter, java.util.Date.class);
-			ConvertUtils.register(new AccountConverter(), Account.class);
+//			ConvertUtils.register(new AccountConverter(), Account.class);
+			//accountの処理には不要?
 			
 			// Apache Commons ProjectのBeanUtilsを使用して
 			// Mapオブジェクトからエンティティ・オブジェクトへ値をセット
@@ -89,27 +91,29 @@ public class ControllerUtils {
 	/*
 	 * リクエスト・パラメーターとして送られてきたString型のdept_idからDepartmentオブジェクト
 	 * に変換するBeanUtils用カスタム・コンバーター
+	 * 
+	 * accountの処理には不要?
 	 */
-	private static class AccountConverter implements Converter {
-
-		@Override
-		public <T> T convert(Class<T> accountClass, Object value) {
-			
-			T account = null;	
-			
-			try {
-				
-				account = accountClass.cast(
-						new AccountDao().findById((String)value));
-				
-			} catch (NumberFormatException | DaoException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			return account;
-		}
-	}
+//	private static class AccountConverter implements Converter {
+//
+//		@Override
+//		public <T> T convert(Class<T> accountClass, Object value) {
+//			
+//			T account = null;	
+//			
+//			try {
+//				
+//				account = accountClass.cast(
+//						new AccountDao().findById((String)value));
+//				
+//			} catch (NumberFormatException | DaoException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//			return account;
+//		}
+//	}
 	
 	/**
 	 * <p>データベースに関連するエラー・メッセージから最も重要な短いメッセージを取り出して返す。</p>
