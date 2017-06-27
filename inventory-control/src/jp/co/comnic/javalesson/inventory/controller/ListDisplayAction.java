@@ -15,12 +15,17 @@ public class ListDisplayAction implements Action{
 		
 		
 		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		String forwardPath = "login";
+		int foodsId = request.getParameter("foodsId");
+		int price = request.getParameter("price");
+		int quantity = request.getParameter("quantity");
+		date date = request.getParameter("purchaseDate");
+		date consumptionDate = request.getParameter("consumptionDate");
+		String forwardPath = "ListDisplay";
+		
 		
 		try {
 			
-			Account account = new AccountDao().loginAuthenticate(email, password);
+			Purchase account = new AccountDao().loginAuthenticate(email, password);
 			
 			if (account != null) {
 				
