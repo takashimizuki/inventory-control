@@ -22,13 +22,25 @@ public class PurchaseDao extends BaseDao {
 		return super.findAll(query, root);
 	}
 	
-	public Purchase findById(Integer id) {
-		return super.findById(Purchase.class, id);
-	}
-
-	@Override
-	public void insert(Object entity) throws DaoException {
-		// TODO Auto-generated method stub
-		super.insert(entity);
-	}
+//	public Purchase findById(Integer id) {
+//		return super.findById(Purchase.class, id);
+//	}
+//
+//	@Override
+//	public void insert(Object entity) throws DaoException {
+//		// TODO Auto-generated method stub
+//		super.insert(entity);
+//	}
+//
+//	@Override
+//	public void remove(Object entity) throws DaoException {
+//		// TODO Auto-generated method stub
+//		super.remove(entity);
+//	}
+//
+//	@Override
+//	public void update(Object entity) throws DaoException {
+//		// TODO Auto-generated method stub
+//		super.update(entity);
+//	}
 }
