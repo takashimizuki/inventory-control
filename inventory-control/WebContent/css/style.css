@@ -7,11 +7,21 @@ h1		{font-size: 38px;
 		margin-top: 0;
 		margin-bottom: 0}
 		
-header	{backgroud-color: #ffffff;
+p	{color: #696969;
+	font-size: 60px;
+	font-weight: bold;
+	text-shadow: 0 10px 5px #ffffff;
+	text-align: center}
+		
+header	{font-weight: bold;
+		text-shadow: 0 5px 5px #ffffff;
 		border-bottom: solid 1px #aaaaaa;
 		margin-bottom: 30px;
 		-webkit-box-shadow: 0 1px 7px #aaaaaa;
 		padding: 5px}
+		
+header a	{color: #000000;
+			text-decoration: none}
 
 body	{background-image: url(../photo.jpg);
 		background-repeat: no-repeat;
@@ -32,6 +42,8 @@ article	{background-color: #ffffff;
 		border-radius: 20px}
 
 input#submit_buttona {width: 150px;
+					 font-size: 18px;
+					 font-weight: bold;
 					 background-color: #00ff00;
 					 border: solid 1px #aaaaaa;
 					 box-shadow: 2px 2px 30px #aaaaaa;
@@ -41,7 +53,9 @@ input#submit_buttona {width: 150px;
 					 padding-top: 10px;
 					 padding-bottom: 10px}
 
-input#submit_buttonb {width: 100px;
+input#submit_buttonb {width: 150px;
+					 font-size: 15px;
+					 font-weight: bold;
 					 background-color: #ff0000;
 					 border: solid 1px #aaaaaa;
 					 box-shadow: 2px 2px 30px #aaaaaa;
@@ -51,7 +65,9 @@ input#submit_buttonb {width: 100px;
 					 padding-top: 10px;
 					 padding-bottom: 10px}
 
-input#submit_buttonc {width: 100px;
+input#submit_buttonc {width: 150px;
+					 font-size: 15px;
+					 font-weight: bold;
 					 background-color: #ffd700;
 					 border: solid 1px #aaaaaa;
 					 box-shadow: 2px 2px 30px #aaaaaa;
@@ -61,7 +77,9 @@ input#submit_buttonc {width: 100px;
 					 padding-top: 10px;
 					 padding-bottom: 10px}
 
-input#submit_buttond {width: 100px;
+input#submit_buttond {width: 150px;
+					 font-size: 15px;
+					 font-weight: bold;
 					 background-color: #00ff00;
 					 border: solid 1px #aaaaaa;
 					 box-shadow: 2px 2px 30px #aaaaaa;
@@ -71,9 +89,33 @@ input#submit_buttond {width: 100px;
 					 padding-top: 10px;
 					 padding-bottom: 10px}
 					 
-table,th,td			 {margin-left: auto;
-					 margin-right: auto}
+table#tablea	{margin-left: auto;
+				margin-right: auto}
 					 
-th	{text-align: left}
+table#tablea th	{width: 60%;
+				padding: 10px 10px 10px 20px;
+				text-align: left}
 
-td	{text-align: left}
+table#tablea td	{width: 40%;
+				padding: 10px 20px 10px 10px;
+				text-align: left}
+				
+table#tableb	{margin-left: auto;
+				margin-right: auto}
+					 
+table#tableb th	{width: 45%;
+				padding: 10px 10px 10px 20px;
+				text-align: left}
+
+table#tableb td	{width: 55%;
+				padding: 10px 20px 10px 10px;
+				text-align: left}
+				
+table#botton	{margin-left: auto;
+				margin-right: auto}
+					 
+table#botton th	{width: 50%;
+				padding: 10px 10px 10px 10px}
+
+table#botton td	{width: 50%;
+				padding: 10px 10px 10px 10px}
