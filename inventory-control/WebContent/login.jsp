@@ -36,5 +36,6 @@
 			<h3>会員でない方は<a href="new-account.jsp">こちら</a></h3>
 	 </form>
 	 </article>
+	 <jsp:include page="footer.jsp"></jsp:include>
      </body>
 </html>
