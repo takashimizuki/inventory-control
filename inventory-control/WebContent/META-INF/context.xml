@@ -2,7 +2,7 @@
     <Resource name="ds/elsamariadb"
               type="javax.sql.DataSource"
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://192.168.182.129:3306/elsamariadb"
+              url="jdbc:mysql://52.68.194.178:3306/elsamariadb"
               username="root"
               password="mariadb"
     />
