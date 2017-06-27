@@ -22,9 +22,9 @@ public class PurchaseDao extends BaseDao {
 		return super.findAll(query, root);
 	}
 	
-//	public Purchase findById(Integer id) {
-//		return super.findById(Purchase.class, id);
-//	}
+	public Purchase findById(Integer id) {
+		return super.findById(Purchase.class, id);
+	}
 
 	@Override
 	public void insert(Object entity) throws DaoException {
