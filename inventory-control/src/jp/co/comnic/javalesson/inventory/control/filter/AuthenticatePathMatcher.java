@@ -12,7 +12,7 @@ public class AuthenticatePathMatcher {
 
 		if (path.matches("/login.*") || 
 		    path.matches(".*(.css)|(.js)|(.gif)|(.png)|(.jpg)")) {
-
+ 
 			return true;
 		}
 		
