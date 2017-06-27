@@ -28,16 +28,16 @@ public class MainController extends HttpServlet {
 	 * @throws IOException
 	 */
 	protected void doService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 繝ｪ繧ｯ繧ｨ繧ｹ繝�URL縺九ｉ驕ｩ蛻�縺ｪAction繧ｪ繝悶ず繧ｧ繧ｯ繝�(繝薙ず繝阪せ繝ｻ繝ｭ繧ｸ繝�繧ｯ縺ｮ螳溯｡後ｒ繧ｫ繝励そ繝ｫ蛹悶☆繧九が繝悶ず繧ｧ繧ｯ繝�)繧貞叙蠕�
+		// ActionFactoryのgetActionにサーブレットパスを渡すことで適切なアクションクラスのインスタンスを生成する
 		Action action = ActionFactory.getAction(request.getServletPath());
-		// Action繧貞ｮ溯｡後＠縺ｦ縲∬ｻ｢騾∝��View縺ｮ繝代せ繧貞叙蠕�
+		// 適切なアクションに値を渡し、フォワードパスを得る
 		String forwardPath = action.execute(request, response);
 		
-		// Action縺ｮ螳溯｣�蜈医〒sendRedirect縺悟ｮ溯｡後＆繧後※縺�繧句�ｴ蜷医↓縺ｯ繝ｬ繧ｹ繝昴Φ繧ｹ縺後☆縺ｧ縺ｫ霑秘�√＆繧後※縺�繧九◆繧］ull縺瑚ｿ斐ｋ
-		if (forwardPath != null) { // 繝ｬ繧ｹ繝昴Φ繧ｹ縺後∪縺�霑秘�√＆繧後※縺�縺ｪ縺代ｌ縺ｰ
-			// 驕ｩ蛻�縺ｪView縺ｫ霆｢騾�
+		// フォワードパスがnullでない場合はフォワードする
+		if (forwardPath != null) {
+			
 			request.getRequestDispatcher(forwardPath).forward(request, response);
-			System.out.println("bbb");
+//			System.out.println("bbb");
 		}
 	}
 		

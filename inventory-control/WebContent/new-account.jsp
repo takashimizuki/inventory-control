@@ -8,11 +8,11 @@
           <link rel="stylesheet" href="css/style.css">
      </head>
      <body>
-     <jsp:include page="header.jsp"></jsp:include>
+        <p>refrigerator</p>
      	<article>
         <form action="new-account.do" method="post">
 		<h1>新規会員登録</h1><br>
-		<table>
+     <table id="tableb">
 		<tr>
 		<th>
 			<h3>メールアドレス</h3>
@@ -36,9 +36,16 @@
 		</td>
 		</tr>
 		</table>
-		<br><br>
-		<input id="submit_buttonc" type="reset" value= "リセット">
+		<br>
+		<table id="botton">
+		<tr>
+		<th>
+	 	<input id="submit_buttonc" type="reset" value= "リセット">
+	 	</th>
+	 	<td>
 		<input id="submit_buttond" type= "submit" value= "登録">
+		</td>
+		</table>
 		</form>
 		<br>		
 		<a href="login.jsp"><input id="submit_buttonb" type= "submit" value= "キャンセル"></a>

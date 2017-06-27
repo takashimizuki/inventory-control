@@ -12,7 +12,7 @@
      <article>
 	 <form action="new.do" method="post">
      <h1>新規</h1><br>    	
-     <table>
+     <table id="tablea">
        	<tr>
 		<th>
 		<h3>商品名</h3>
@@ -37,14 +37,21 @@
 		<h3>数量</h3>
 		<input type="number" name="quantity" min="1" max="999" value="1" step="1" required>
 		</th>
-		<td>
-		<br><br><br>
-		<input id="submit_buttonc" type="reset" value= "リセット">
+		<td></td>
+		</tr>
+		</table>
+		<br><br>
+		<table id="botton">
+		<tr>
+		<th>
+	 	<input id="submit_buttonc" type="reset" value= "リセット">
+	 	</th>
+	 	<td>
 		<input id="submit_buttond" type= "submit" value= "決定">
 		</td>
-	 </table>
+		</table>
 		</form>
-		<br><br>
+		<br>
 		<a href="main.jsp"><input id="submit_buttonb" type= "submit" value= "キャンセル"></a>
 		</article>
      </body>

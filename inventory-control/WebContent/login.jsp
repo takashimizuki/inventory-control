@@ -8,11 +8,11 @@
           <link rel="stylesheet" href="css/style.css">
      </head>
      <body>
-     <jsp:include page="header.jsp"></jsp:include>
+     <p>refrigerator</p>
      <article>
      <form action="login.do" method="post">
 		<h1>ログイン</h1><br>
-		<table>
+     <table id="tableb">
 		<tr>
 		<th>
 			<h3>メールアドレス</h3>
@@ -30,7 +30,7 @@
 		</td>
 		</tr>
 		</table>
-		<br><br>
+		<br>
 			<input id="submit_buttona" type= "submit" value= "ログイン">
 		<br><br>
 			<h3>会員でない方は<a href="new-account.jsp">こちら</a></h3>
