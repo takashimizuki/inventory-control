@@ -12,7 +12,8 @@ public class AuthenticatePathMatcher {
 
 		if (path.matches("/login.*") || 
 		    path.matches(".*(.css)|(.js)|(.gif)|(.png)|(.jpg)") ||
-		    path.matches("/new-account.*")) {
+		    path.matches("/new-account.*") ||
+		    path.matches("/photo.jpg")) {
  
 			return true;
 		}
