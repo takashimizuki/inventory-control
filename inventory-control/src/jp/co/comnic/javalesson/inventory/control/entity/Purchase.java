@@ -2,7 +2,6 @@ package jp.co.comnic.javalesson.inventory.control.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.Date;
 
 

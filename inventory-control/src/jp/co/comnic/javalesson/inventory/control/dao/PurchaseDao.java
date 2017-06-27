@@ -14,6 +14,7 @@ import jp.co.comnic.javalesson.inventory.control.entity.Purchase;
 public class PurchaseDao extends BaseDao {
 	
 	public PurchaseDao() throws DaoException {}
+	
 	private CriteriaQuery<Purchase> query = builder.createQuery(Purchase.class);
 	private Root<Purchase> root = query.from(Purchase.class);
 	
@@ -21,8 +22,13 @@ public class PurchaseDao extends BaseDao {
 		return super.findAll(query, root);
 	}
 	
-//	public Purchase findById(Integer id) {
-//		return super.findById(Purchase.class, id);
-//	}
- 
- }
+	public Purchase findById(Integer id) {
+		return super.findById(Purchase.class, id);
+	}
+
+	@Override
+	public void insert(Object entity) throws DaoException {
+		// TODO Auto-generated method stub
+		super.insert(entity);
+	}
+}
