@@ -14,6 +14,7 @@ import jp.co.comnic.javalesson.inventory.control.entity.Purchase;
 public class PurchaseDao extends BaseDao {
 	
 	public PurchaseDao() throws DaoException {}
+	
 	private CriteriaQuery<Purchase> query = builder.createQuery(Purchase.class);
 	private Root<Purchase> root = query.from(Purchase.class);
 	
