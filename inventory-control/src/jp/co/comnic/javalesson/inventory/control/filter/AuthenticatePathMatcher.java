@@ -16,7 +16,7 @@ public class AuthenticatePathMatcher {
 		    path.matches("/photo.jpg")) {
  
 			return true;
-			//pushs
+			//pushsd
 		}
 		
 		return false;
