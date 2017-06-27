@@ -34,11 +34,11 @@ public class ListDisplayAction implements Action{
 			if (purchase != null) {
 				
 				request.getSession().setAttribute("purchaseemail", purchase.getEmail());
-				request.getSession().setAttribute("purchasefoodsId", purchase.getEmail());
-				request.getSession().setAttribute("purchaseprice", purchase.getEmail());
-				request.getSession().setAttribute("purchasequantity", purchase.getEmail());
-				request.getSession().setAttribute("purchasepurchaseDate", purchase.getEmail());
-				request.getSession().setAttribute("purchaseconsumptionDate", purchase.getEmail());
+				request.getSession().setAttribute("purchasefoodsId", purchase.getFoodsId());
+				request.getSession().setAttribute("purchaseprice", purchase.getPrice());
+				request.getSession().setAttribute("purchasequantity", purchase.getQuantity());
+				request.getSession().setAttribute("purchasepurchaseDate", purchase.getDate());
+				request.getSession().setAttribute("purchaseconsumptionDate", purchase.getConsumptionDate());
 				
 				System.out.println("request.getSession().setAttribute");
 				
@@ -49,6 +49,7 @@ public class ListDisplayAction implements Action{
 			} else { 
 				request.setAttribute("error", "[ERROR] Invalid e-mail or password.");
 			}
+			
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
