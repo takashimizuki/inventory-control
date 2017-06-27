@@ -1,4 +1,4 @@
-package jp.co.comnic.javalesson.inventory.control.dao;
+package jp.co.comnic.javalesson.inventory.controller;
 
 import java.io.IOException;
 
@@ -6,15 +6,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jp.co.comnic.javalesson.inventory.controller.Action;
+import jp.co.comnic.javalesson.inventory.control.dao.BaseDao;
+import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
 
 /**
- * <p>ƒŒƒR[ƒh‚ÌV‹K‘}“ü‚ğÀs‚·‚éActionƒCƒ“ƒ^[ƒtƒFƒCƒX‚ÌÀ‘•B</p>
+ * <p>ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½ÌVï¿½Kï¿½}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Actionï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½B</p>
  * 
  * @author M.Yoneyama
  * @version 1.0
  */
-public class NewAccountDao implements Action {
+public class NewAccountAction implements Action {
 
 	/* (non-Javadoc)
 	 * @see jp.co.comnic.javalesson.webapp.ems.controller.Action#execute(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
@@ -25,19 +26,19 @@ public class NewAccountDao implements Action {
 		
 		String servletPath = request.getServletPath();
 		
-		String redirectPath = "../../WebContent/login.jsp"; // ³íˆ—‚ÌƒŠƒ_ƒCƒŒƒNƒgæiˆê——‰æ–Êj
+		String redirectPath = "login"; // ï¿½ï¿½ï¿½íˆï¿½ï¿½ï¿½Ìƒï¿½ï¿½_ï¿½Cï¿½ï¿½ï¿½Nï¿½gï¿½ï¿½iï¿½ê——ï¿½ï¿½Êj
 //		response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/login.jsp");
-		String forwardPath = "new-account.jsp"; // —áŠO”­¶‚ÌƒtƒHƒ[ƒhæiŒ³‚Ì“o˜^‰æ–Êj
+		String forwardPath = "new-account"; // ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒtï¿½Hï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½iï¿½ï¿½ï¿½Ì“oï¿½^ï¿½ï¿½Êj
 		
 		try {
 			
-			// ƒŠƒNƒGƒXƒgEƒpƒX•¶š—ñ‚©‚ç‹ó‚ÌƒGƒ“ƒeƒBƒeƒBEƒIƒuƒWƒFƒNƒg‚ğ¶¬
+			// ï¿½ï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½Eï¿½pï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ñ‚©‚ï¿½ï¿½ÌƒGï¿½ï¿½ï¿½eï¿½Bï¿½eï¿½Bï¿½Eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ğ¶ï¿½
 			Object entity = Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)).newInstance();
 			
-			// ƒŠƒNƒGƒXƒgEƒpƒ‰ƒ[ƒ^‚Ì’l‚ğg—p‚µ‚ÄƒGƒ“ƒeƒBƒeƒBEƒIƒuƒWƒFƒNƒg‚ÌƒtƒB[ƒ‹ƒh’l‚ğİ’è
+			// ï¿½ï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½Eï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½Ì’lï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ÄƒGï¿½ï¿½ï¿½eï¿½Bï¿½eï¿½Bï¿½Eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìƒtï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½lï¿½ï¿½İ’ï¿½
 			ControllerUtils.populateEntity(request, entity);
 			
-			// ƒGƒ“ƒeƒBƒeƒBEƒIƒuƒWƒFƒNƒg‚ğDAO‚É“n‚·‚±‚Æ‚ÅV‹KƒŒƒR[ƒh‚ğDB‚É‘}“ü
+			// ï¿½Gï¿½ï¿½ï¿½eï¿½Bï¿½eï¿½Bï¿½Eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½DAOï¿½É“nï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ÅVï¿½Kï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½ï¿½DBï¿½É‘}ï¿½ï¿½
 			new BaseDao().insert(entity);
 			
 			forwardPath = null;

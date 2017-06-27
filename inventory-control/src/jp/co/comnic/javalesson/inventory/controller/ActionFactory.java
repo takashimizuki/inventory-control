@@ -7,53 +7,43 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebListener;
 
 /**
- * <p>Action‚ÌÀ‘•ƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ä•Ô‚·ƒtƒ@ƒNƒgƒŠ[B</p>
+ * <p>Actionï¿½Ìï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ğ¶ï¿½ï¿½ï¿½ï¿½Ä•Ô‚ï¿½ï¿½tï¿½@ï¿½Nï¿½gï¿½ï¿½ï¿½[ï¿½B</p>
  * 
  * @author M.Yoneyama
  * @version 1.0
  */
-@WebListener // ƒŠƒXƒi[‚Ì“o˜^
+@WebListener // ï¿½ï¿½ï¿½Xï¿½iï¿½[ï¿½Ì“oï¿½^
 public class ActionFactory implements ServletContextListener {
 
-	// web.xml‚É‹Lq‚³‚ê‚½context-param‚ğ—˜—p‚·‚é‚½‚ß‚É•K—v
+	// web.xmlï¿½É‹Lï¿½qï¿½ï¿½ï¿½ê‚½context-paramï¿½ğ—˜—pï¿½ï¿½ï¿½é‚½ï¿½ß‚É•Kï¿½v
 	private static ServletContext context;
 	
-	/**
-	 * <p>ƒNƒ‰ƒCƒAƒ“ƒg‚ÌƒŠƒNƒGƒXƒgEƒpƒX‚ğŒ³‚É“KØ‚ÈAction‚ÌÀ‘•ƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚·‚éB</P>
-	 * <p>ƒŠƒNƒGƒXƒgEƒpƒX‚ÆActionƒNƒ‰ƒX‚Ì‘Î‰•t‚¯‚Íweb.xmlƒtƒ@ƒCƒ‹context-paramƒ^ƒO‚ğg—p‚µ‚Äİ’è‚µA
-	 * ServletContextƒIƒuƒWƒFƒNƒg‚ÌgetInitParameterƒƒ\ƒbƒh‚ğg—p‚µ‚Äæ“¾‚·‚éB
-	 * </p>
-	 * 
-	 * @param servletPath ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç‚ÌƒŠƒNƒGƒXƒgEƒpƒX
-	 * @return Action‚ÌÀ‘•
-	 * @throws ServletException
-	 */
 	public static Action getAction(String servletPath) throws ServletException {
 		
 		Action action = null;
 		
-		// ˆø”‚Å“n‚³‚ê‚½ServletƒpƒX‚É‘Î‰‚·‚éAction‚ÌÀ‘•ƒNƒ‰ƒX–¼‚ğæ“¾
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Å“nï¿½ï¿½ï¿½ê‚½Servletï¿½pï¿½Xï¿½É‘Î‰ï¿½ï¿½ï¿½ï¿½ï¿½Actionï¿½Ìï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 		String actionClassName = context.getInitParameter(servletPath);
 		
 		try {
-			// æ“¾‚µ‚½Action‚ÌÀ‘•ƒNƒ‰ƒX–¼‚©‚çƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬
+			// ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½Actionï¿½Ìï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ğ¶ï¿½
 			action = (Action)Class.forName(actionClassName).newInstance();
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
 		
-		// ¶¬‚µ‚½Action‚ÌÀ‘•ƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚·
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Actionï¿½Ìï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½Ô‚ï¿½
 		return action;
 	}
 	
 	/* (non-Javadoc)
-	 * ServletContextListenerƒCƒ“ƒ^[ƒtƒFƒCƒX‚ğimplements‚µ‚½ƒNƒ‰ƒX‚ÌcontextInitializedƒƒ\ƒbƒh‚Í
-	 * ƒRƒ“ƒeƒi‚Ì‹N“®©“®“I‚ÉŒÄ‚Ño‚³‚ê‚é
+	 * ServletContextListenerï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½Cï¿½Xï¿½ï¿½implementsï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½contextInitializedï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½
+	 * ï¿½Rï¿½ï¿½ï¿½eï¿½iï¿½Ì‹Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ÉŒÄ‚Ñoï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @see javax.servlet.ServletContextListener#contextInitialized(javax.servlet.ServletContextEvent)
 	 */
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		// ƒRƒ“ƒeƒi‹N“®‚ÉServletContextƒIƒuƒWƒFƒNƒg‚ğó‚¯æ‚Á‚ÄƒtƒB[ƒ‹ƒh‚ÉƒZƒbƒg
+		// ï¿½Rï¿½ï¿½ï¿½eï¿½iï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ServletContextï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ó‚¯ï¿½ï¿½ï¿½Äƒtï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½ÉƒZï¿½bï¿½g
 		context = sce.getServletContext();
 	}
 

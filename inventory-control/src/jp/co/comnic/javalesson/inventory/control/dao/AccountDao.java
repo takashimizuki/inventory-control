@@ -8,7 +8,7 @@ import javax.persistence.criteria.Root;
 
 import jp.co.comnic.javalesson.inventory.control.entity.Account;
 /**
- * <p>•”ƒe[ƒuƒ‹‚ÌCRUD‘€ì‚ğÀ‘•‚·‚éDAOƒNƒ‰ƒX</p>
+ * <p>ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½[ï¿½uï¿½ï¿½ï¿½ï¿½CRUDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DAOï¿½Nï¿½ï¿½ï¿½X</p>
  */
 public class AccountDao extends BaseDao {
 	
@@ -20,7 +20,7 @@ public class AccountDao extends BaseDao {
 		return super.findAll(query, root);
 	}
 	
-	public Account findById(Integer id) {
+	public Account findById(String id) {
 		return super.findById(Account.class, id);
 	}
 	
@@ -29,18 +29,18 @@ public class AccountDao extends BaseDao {
 		Account account = null;
 		
 		try {
-			// Criteria API‚ğg—p‚µ‚ÄˆÈ‰ºSQL‚ğ¶¬‚·‚é
+			// Criteria APIï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ÄˆÈ‰ï¿½SQLï¿½ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½
 			// SELECT * FROM ACCOUNT WHERE email = [email] AND password = [password]
 			query.select(root)
 				 .where(builder.equal(root.get("email"), email), 
 						builder.equal(root.get("password"), password));
 			
-			// SQL‚ğÀs‚µ‚ÄŒ‹‰Ê‚ğ’Pˆê‚ÌƒGƒ“ƒeƒBƒeƒBEƒIƒuƒWƒFƒNƒg‚Æ‚µ‚Äæ“¾
+			// SQLï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÄŒï¿½ï¿½Ê‚ï¿½Pï¿½ï¿½ÌƒGï¿½ï¿½ï¿½eï¿½Bï¿½eï¿½Bï¿½Eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Æ‚ï¿½ï¿½Äæ“¾
 			account = em.createQuery(query).getSingleResult();
 			
 		} catch (NoResultException e) {
-			// getSingleResultƒƒ\ƒbƒh‚ÍŒ‹‰Ê‚ª‚È‚©‚Á‚½ê‡‚ÉNoResultException‚ğthrow
-			// ‚·‚é‚½‚ßA‚±‚Ì—áŠOˆ—‚Í•s—v
+			// getSingleResultï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ÍŒï¿½ï¿½Ê‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½NoResultExceptionï¿½ï¿½throw
+			// ï¿½ï¿½ï¿½é‚½ï¿½ßAï¿½ï¿½ï¿½Ì—ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Í•sï¿½v
 		}
 		
 		return account;
