@@ -6,6 +6,8 @@
 		<non-jta-data-source>java:comp/env/ds/elsamariadb</non-jta-data-source>
 		
 		<class>jp.co.comnic.javalesson.inventory.control.entity.Account</class>
+		<class>jp.co.comnic.javalesson.inventory.control.entity.Food</class>
+		<class>jp.co.comnic.javalesson.inventory.control.entity.Purchase</class>
 
 	</persistence-unit>
 	
