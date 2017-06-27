@@ -25,5 +25,10 @@ public class PurchaseDao extends BaseDao {
 //	public Purchase findById(Integer id) {
 //		return super.findById(Purchase.class, id);
 //	}
- 
- }
+
+	@Override
+	public void insert(Object entity) throws DaoException {
+		// TODO Auto-generated method stub
+		super.insert(entity);
+	}
+}
