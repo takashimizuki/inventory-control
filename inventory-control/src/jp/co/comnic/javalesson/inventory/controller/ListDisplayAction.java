@@ -40,6 +40,8 @@ public class ListDisplayAction implements Action{
 				request.getSession().setAttribute("purchasepurchaseDate", purchase.getEmail());
 				request.getSession().setAttribute("purchaseconsumptionDate", purchase.getEmail());
 				
+				System.out.println("request.getSession().setAttribute");
+				
 				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
 				
 				forwardPath = null;

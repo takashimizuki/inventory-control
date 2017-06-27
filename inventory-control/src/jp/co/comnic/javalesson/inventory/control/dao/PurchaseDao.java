@@ -40,8 +40,9 @@ public class PurchaseDao extends BaseDao {
 						builder.equal(root.get("date"), date);
 						builder.equal(root.get("consumptionDatepassword"), consumptionDatepassword);
 						
+		System.out.println("builder.equal");
 
-			purchase = em.createQuery(query).getSingleResult();
+		purchase = em.createQuery(query).getSingleResult();
 			
 		} catch (NoResultException e) {
 			
