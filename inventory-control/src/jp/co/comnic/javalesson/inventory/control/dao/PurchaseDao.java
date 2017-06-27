@@ -2,6 +2,7 @@ package jp.co.comnic.javalesson.inventory.control.dao;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -22,13 +23,31 @@ public class PurchaseDao extends BaseDao {
 		return super.findAll(query, root);
 	}
 	
-	public Purchase findById(Integer id) {
-		return super.findById(Purchase.class, id);
-	}
+//	public Purchase findById(String id) {
+//		return super.findById(Purchase.class, id);
+//	}
+	
+	public Purchase ListDisplay(String email, String foodsId,String price,String quantity,String date,String consumptionDatepassword) {
 
-	@Override
-	public void insert(Object entity) throws DaoException {
-		// TODO Auto-generated method stub
-		super.insert(entity);
+		Purchase purchase = null;
+		
+		try {
+			query.select(root)
+				 .where(builder.equal(root.get("email"), email), 
+						builder.equal(root.get("foodsId"), foodsId));
+						builder.equal(root.get("price"), price);
+						builder.equal(root.get("quantity"), quantity);
+						builder.equal(root.get("date"), date);
+						builder.equal(root.get("consumptionDatepassword"), consumptionDatepassword);
+						
+		System.out.println("builder.equal");
+
+		purchase = em.createQuery(query).getSingleResult();
+			
+		} catch (NoResultException e) {
+			
+		}
+		
+		return purchase;
 	}
 }
