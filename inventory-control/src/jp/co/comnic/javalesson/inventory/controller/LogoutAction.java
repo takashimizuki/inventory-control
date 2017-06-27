@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * <p>ƒƒOƒAƒEƒg”FØˆ—‚ğÀs‚·‚éActionƒCƒ“ƒ^[ƒtƒFƒCƒX‚ÌÀ‘•B</p>
+ * <p>ï¿½ï¿½ï¿½Oï¿½Aï¿½Eï¿½gï¿½Fï¿½Øï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Actionï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½B</p>
  * 
  * @author M.Yoneyama
  * @version 1.0
@@ -21,8 +21,8 @@ public class LogoutAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.getSession().invalidate(); // ƒZƒbƒVƒ‡ƒ“ŠÇ—‚ğ–³Œø‚É‚·‚é(HttpSessionƒIƒuƒWƒFƒNƒg‚Ì”jŠü)
-		response.sendRedirect("login"); // ƒƒOƒCƒ“‰æ–Ê‚ÉƒŠƒ_ƒCƒŒƒNƒg
+		request.getSession().invalidate(); //  ã‚»ãƒƒã‚·ãƒ§ãƒ³ç®¡ç†ã‚’ç„¡åŠ¹ã«ã™ã‚‹(HttpSessionã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç ´æ£„)
+		response.sendRedirect("login"); // ãƒ­ã‚°ã‚¤ãƒ³ç”»é¢ã«ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆ
 		
 		return null;
 	}
