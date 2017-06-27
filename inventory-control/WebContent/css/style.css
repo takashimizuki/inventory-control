@@ -23,6 +23,15 @@ header	{font-weight: bold;
 header a	{color: #000000;
 			text-decoration: none}
 
+table#header	{margin-left: 10px;
+				margin-right: 10px}
+
+table#header th	{width: 90%;
+				text-align: left}
+
+table#header td	{width: 10%;
+				text-align: right}
+
 body	{background-image: url(../photo.jpg);
 		background-repeat: no-repeat;
 		background-position: 50% 0;
