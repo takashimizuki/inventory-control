@@ -47,7 +47,7 @@
 		</td>
 		</table>
 		</form>
-		<br>		
+		<br>
 		<a href="login.jsp"><input id="submit_buttonb" type= "submit" value= "キャンセル"></a>
 		</article>
      </body>
