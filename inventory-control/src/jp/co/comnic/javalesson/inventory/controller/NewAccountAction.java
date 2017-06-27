@@ -27,9 +27,9 @@ public class NewAccountAction implements Action {
 		String servletPath = request.getServletPath();
 		// this string is -> /new-account.do
 		
-		String redirectPath = "login"; // ���폈���̃��_�C���N�g��i�ꗗ��ʁj
+		String redirectPath = "login"; // 登録できた場合はここに戻る
 //		response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/login.jsp");
-		String forwardPath = "new-account"; // ��O�������̃t�H���[�h��i���̓o�^��ʁj
+		String forwardPath = "new-account"; // 登録できなかった場合はここに戻る
 		
 		try {
 			
@@ -40,7 +40,7 @@ public class NewAccountAction implements Action {
 			// servletRequestとオブジェクトを渡し、エンティティクラスに
 			ControllerUtils.populateEntity(request, entity);
 			
-			// �G���e�B�e�B�E�I�u�W�F�N�g��DAO�ɓn�����ƂŐV�K���R�[�h��DB�ɑ}��
+			// baseDaoのinsertにオブジェクトを渡す
 			new BaseDao().insert(entity);
 			
 			forwardPath = null;

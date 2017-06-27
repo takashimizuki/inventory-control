@@ -64,7 +64,8 @@ public class ControllerUtils {
 		Map<String, String> propertyMap = new HashMap<>();
 		for (String key : parameterMap.keySet()) {
 			propertyMap.put(key, parameterMap.get(key)[0]);
-			System.out.println(parameterMap.get(key)[0]);
+			System.out.println(key);
+			System.out.println(parameterMap.get(key)[0]);	//確認用
 		}
 
 		try {

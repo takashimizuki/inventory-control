@@ -32,7 +32,7 @@
 			<h3>ユーザー名</h3>
 		</th>
 		<td>
-			<input type="text" name="accountname">
+			<input type="text" name="username">
 		</td>
 		</tr>
 		</table>

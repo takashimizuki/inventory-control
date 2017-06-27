@@ -9,6 +9,11 @@
 		<class>jp.co.comnic.javalesson.inventory.control.entity.Food</class>
 		<class>jp.co.comnic.javalesson.inventory.control.entity.Purchase</class>
 
+        <properties>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+        </properties>
+        
 	</persistence-unit>
+	
 	
 </persistence>
