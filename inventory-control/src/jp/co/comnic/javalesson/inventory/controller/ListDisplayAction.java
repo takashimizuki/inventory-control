@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jp.co.comnic.javalesson.inventory.control.dao.PurchaseDao;
+import jp.co.comnic.javalesson.inventory.control.entity.Purchase;
+
 public class ListDisplayAction implements Action{
 
 	@Override
@@ -15,22 +18,27 @@ public class ListDisplayAction implements Action{
 		
 		
 		String email = request.getParameter("email");
-		int foodsId = request.getParameter("foodsId");
-		int price = request.getParameter("price");
-		int quantity = request.getParameter("quantity");
-		date date = request.getParameter("purchaseDate");
-		date consumptionDate = request.getParameter("consumptionDate");
+		String foodsId = request.getParameter("foodsId");
+		String price = request.getParameter("price");
+		String quantity = request.getParameter("quantity");
+		String date = request.getParameter("purchaseDate");
+		String consumptionDate = request.getParameter("consumptionDate");
+		
 		String forwardPath = "ListDisplay";
 		
 		
 		try {
 			
-			Purchase account = new AccountDao().loginAuthenticate(email, password);
+			Purchase purchase = new PurchaseDao().ListDisplay(email, foodsId, price, quantity, date, consumptionDate);
 			
-			if (account != null) {
+			if (purchase != null) {
 				
-				request.getSession().setAttribute("isAuthenticated", "AUTHENTICATED");
-				request.getSession().setAttribute("loginUsername", account.getUsername());
+				request.getSession().setAttribute("purchaseemail", purchase.getEmail());
+				request.getSession().setAttribute("purchasefoodsId", purchase.getEmail());
+				request.getSession().setAttribute("purchaseprice", purchase.getEmail());
+				request.getSession().setAttribute("purchasequantity", purchase.getEmail());
+				request.getSession().setAttribute("purchasepurchaseDate", purchase.getEmail());
+				request.getSession().setAttribute("purchaseconsumptionDate", purchase.getEmail());
 				
 				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
 				
