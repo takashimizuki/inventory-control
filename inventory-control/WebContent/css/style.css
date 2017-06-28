@@ -106,7 +106,7 @@ input#submit_buttone {font-size: 15px;
 					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
 					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
 					 border-radius: 10px;
-					 padding: 10px 10px 10px 10px}
+					 padding: 10px 15px 10px 15px}
 
 input#submit_buttonf {font-size: 15px;
 					 font-weight: bold;
@@ -116,7 +116,7 @@ input#submit_buttonf {font-size: 15px;
 					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
 					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
 					 border-radius: 10px;
-					 padding: 10px 10px 10px 10px}
+					 padding: 10px 15px 10px 15px}
 					 
 table#newtable	{margin-left: auto;
 				margin-right: auto}
