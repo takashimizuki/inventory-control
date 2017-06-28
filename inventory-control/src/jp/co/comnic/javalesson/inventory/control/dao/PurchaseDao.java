@@ -32,6 +32,7 @@ public class PurchaseDao extends BaseDao {
 		Purchase purchase = null;
 		
 		try {
+			// SELECT * FROM ACCOUNT WHERE email = [email]
 			query.select(root)
 				 .where(builder.equal(root.get("email"), email));
 
