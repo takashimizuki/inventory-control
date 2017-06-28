@@ -30,7 +30,7 @@
 		</td>
 		</tr>
 		</table>
-		<br>
+		<div class="error">${error}</div>
 			<input id="submit_buttona" type= "submit" value= "ログイン">
 		<br><br>
 			<h3>会員でない方は<a href="new-account.jsp">こちら</a></h3>

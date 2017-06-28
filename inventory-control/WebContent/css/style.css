@@ -139,3 +139,9 @@ table#maintable th	{padding: 10px 10px 10px 10px;
 table#maintable td	{padding: 10px 10px 10px 10px;
 					background-color: #ffffff;
 					text-align: center}
+					
+div.error	{color: #ff0000;
+			font-size: 20px;
+			margin-bottom: 20px;
+			font-weight: bold;
+			text-align: center}
