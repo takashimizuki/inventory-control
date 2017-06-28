@@ -30,7 +30,7 @@ public class InsertAction implements Action {
 			
 			Food fd = new FoodDao().findByName(foodName);
 			
-			request.setAttribute("foodsid", fd.getId());	
+			request.setAttribute("fdid", fd.getId());	
 
 			Object entity = Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)).newInstance();
 			
@@ -42,7 +42,6 @@ public class InsertAction implements Action {
 			
 			forwardPath = null;
 			response.sendRedirect(redirectPath);
-			System.out.println("Insert");
 			
 		} catch (DaoException e) {
 			request.setAttribute("error", "[ERROR]: " + 

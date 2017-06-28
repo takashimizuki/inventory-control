@@ -41,16 +41,18 @@ public class ControllerUtils {
 		
 		Map<String, String> propertyMap = new HashMap<>();
 		
-		propertyMap.put("id", null);
-		
-		propertyMap.put("email", (String) request.getSession().getAttribute("loginEmail"));
 		for (String key : parameterMap.keySet()) {
 			propertyMap.put(key, parameterMap.get(key)[0]);
 			System.out.println(key);
 			System.out.println(parameterMap.get(key)[0]);	
 		}
 		
-
+		if(request.getAttribute("fdid") != null){
+			propertyMap.put("id", null);
+			propertyMap.put("email", (String) request.getSession().getAttribute("loginEmail"));
+			propertyMap.put("foodsid", Integer.toString((int) request.getAttribute("fdid")));
+		}
+		
 		try {
 
 			DateConverter dateConverter = new DateConverter();
@@ -100,7 +102,7 @@ public class ControllerUtils {
 			try {
 				
 				food = foodClass.cast(
-						new FoodDao().findById(Integer.parseInt((String)value)));
+						new FoodDao().findById((Integer) value));
 				
 			} catch (NumberFormatException | DaoException e) {
 				// TODO Auto-generated catch block
