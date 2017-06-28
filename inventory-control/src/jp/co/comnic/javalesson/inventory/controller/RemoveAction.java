@@ -24,8 +24,8 @@ public class RemoveAction implements Action {
 			throws ServletException, IOException {
 		
 		String servletPath = request.getServletPath();
-		String forwardPath = "./";
-		String redirectPath = "./";
+		String forwardPath = "main";
+		String redirectPath = "main";
 		Integer id = Integer.parseInt(request.getParameter("id")); // íœ‚·‚éƒŒƒR[ƒh‚ÌID
 		
 		try {
