@@ -33,7 +33,7 @@
     </context-param>
     
     <context-param>
-        <param-name>/delete.do</param-name>
+        <param-name>/remove.do</param-name>
         <param-value>jp.co.comnic.javalesson.inventory.controller.RemoveAction</param-value>
     </context-param>
     

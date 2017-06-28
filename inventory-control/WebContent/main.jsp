@@ -52,17 +52,16 @@
                 	<td>${data}</td>
                 </c:if>
 	       </c:forEach>
-	       
-            <td>
-                <form action="edit.do=${id}">
-                    <a href="edit.jsp"><input id="submit_buttone" type= "submit" value= "変更"></a>
-                </form>
-            </td>
+           <td>
+           <a href="edit?id=${id}">
+           <input id="submit_buttone" type= "submit" value= "変更">
+           </a>
+           </td>
             
 	       <td>
-                <form action="remove.do=${id}">
-	               <input id="submit_buttonf" type= "submit" value= "削除">
-	           </form>
+	       <a href="remove.do?id=${id}">
+	       <input id="submit_buttonf" type= "submit" value= "削除">
+	       </a>
 	       </td>
 	   
 	   </tr>
