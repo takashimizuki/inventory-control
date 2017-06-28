@@ -51,6 +51,7 @@ public class ControllerUtils {
 			propertyMap.put("id", null);
 			propertyMap.put("email", (String) request.getSession().getAttribute("loginEmail"));
 			propertyMap.put("foodsid", Integer.toString((int) request.getAttribute("fdid")));
+			System.out.println(propertyMap);
 		}
 		
 		try {
