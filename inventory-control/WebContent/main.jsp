@@ -13,7 +13,7 @@
      <jsp:include page="header.jsp"></jsp:include>
      
      <sql:query var="table" dataSource="ds/elsamariadb">
-	 SELECT a.name, b.price, b.quantity, b.date, b.consumptionDate FROM FOODS a JOIN PURCHASE b ON a.id = b.foodsId;
+	 SELECT b.id, a.name, b.price, b.quantity, b.date, b.consumptionDate FROM FOODS a JOIN PURCHASE b ON a.id = b.foodsId WHERE b.email = '${loginEmail}';
 	 </sql:query>
 	 
      <br><br>
@@ -43,22 +43,26 @@
 	 <th colspan="2">
 	 </tr>
 	 <c:forEach var="record" items="${table.rowsByIndex}">
-	 <tr>
-	 <c:forEach var="data" items="${record}">
-	 <td>${data}</td>
+	   <tr>
+	       <c:forEach var="data" items="${record}">
+                <td>${data}</td>
+	       </c:forEach>
+	       
+            <td>
+                <form action="edit.do">
+                    <a href="edit.jsp"><input id="submit_buttond" type= "submit" value= "変更"></a>
+                </form>
+            </td>
+            
+	       <td>
+                <form action="remove.do">
+	               <input id="submit_buttonb" type= "submit" value= "削除">
+	           </form>
+	       </td>
+	   
+	   </tr>
 	 </c:forEach>
-     <td>
-     <form action="edit.do">
-     <a href="edit.jsp"><input id="submit_buttond" type= "submit" value= "変更"></a>
-     </form>
-     </td>
-	 <td>
-     <form action="remove.do">
-	 <input id="submit_buttonb" type= "submit" value= "削除">
-	 </form>
-	 </td>
-	 </tr>
-	 </c:forEach>
+	 
 	 </table>
 	 <jsp:include page="footer.jsp"></jsp:include>
 	 </body>
