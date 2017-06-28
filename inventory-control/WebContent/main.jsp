@@ -44,19 +44,24 @@
 	 </tr>
 	 <c:forEach var="record" items="${table.rowsByIndex}">
 	   <tr>
-	       <c:forEach var="data" items="${record}">
-                <td>${data}</td>
+	       <c:forEach var="data" items="${record}" varStatus="loop">
+				<c:if test="${loop.count == 1}">
+					<c:set var="id" value="${data}" />
+				</c:if>
+				<c:if test="${loop.count != 1}">
+                	<td>${data}</td>
+                </c:if>
 	       </c:forEach>
 	       
             <td>
-                <form action="edit.do">
-                    <a href="edit.jsp"><input id="submit_buttond" type= "submit" value= "変更"></a>
+                <form action="edit.do=${id}">
+                    <a href="edit.jsp"><input id="submit_buttone" type= "submit" value= "変更"></a>
                 </form>
             </td>
             
 	       <td>
-                <form action="remove.do">
-	               <input id="submit_buttonb" type= "submit" value= "削除">
+                <form action="remove.do=${id}">
+	               <input id="submit_buttonf" type= "submit" value= "削除">
 	           </form>
 	       </td>
 	   

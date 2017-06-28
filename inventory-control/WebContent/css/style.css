@@ -97,6 +97,26 @@ input#submit_buttond {width: 150px;
 					 border-radius: 10px;
 					 padding-top: 10px;
 					 padding-bottom: 10px}
+
+input#submit_buttone {font-size: 15px;
+					 font-weight: bold;
+					 background-color: #00ff00;
+					 border: solid 1px #aaaaaa;
+					 box-shadow: 2px 2px 30px #aaaaaa;
+					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
+					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
+					 border-radius: 10px;
+					 padding: 10px 10px 10px 10px}
+
+input#submit_buttonf {font-size: 15px;
+					 font-weight: bold;
+					 background-color: #ff0000;
+					 border: solid 1px #aaaaaa;
+					 box-shadow: 2px 2px 30px #aaaaaa;
+					 -moz-box-shadow: 2px 2px 30px #aaaaaa;
+					 -webkit-box-shadow: 2px 2px 30px #aaaaaa;
+					 border-radius: 10px;
+					 padding: 10px 10px 10px 10px}
 					 
 table#newtable	{margin-left: auto;
 				margin-right: auto}
@@ -132,11 +152,11 @@ table#botton td	{width: 50%;
 table#maintable	{margin-left: auto;
 				margin-right: auto}
 					 
-table#maintable th	{padding: 10px 10px 10px 10px;
+table#maintable th	{padding: 10px 20px 10px 20px;
 					background-color: #ffffff;
 					text-align: center}
 
-table#maintable td	{padding: 10px 10px 10px 10px;
+table#maintable td	{padding: 10px 20px 10px 20px;
 					background-color: #ffffff;
 					text-align: center}
 					
