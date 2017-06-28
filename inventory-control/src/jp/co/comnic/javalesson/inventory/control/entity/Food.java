@@ -26,6 +26,10 @@ public class Food implements Serializable {
 
 	public Food() {
 	}
+	
+	public Food(String name) {
+		this.setName(name);
+	}
 
 	public int getId() {
 		return this.id;

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import jp.co.comnic.javalesson.inventory.control.dao.BaseDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
+import jp.co.comnic.javalesson.inventory.control.dao.FoodDao;
+import jp.co.comnic.javalesson.inventory.control.entity.Food;
 /**
  * <p>���R�[�h�̐V�K�}�������s����Action�C���^�[�t�F�C�X�̎����B</p>
  * 
@@ -28,8 +30,15 @@ public class InsertAction implements Action {
 		
 		String redirectPath = "main"; // ���폈���̃��_�C���N�g��i�ꗗ��ʁj
 		String forwardPath = "new"; // ��O�������̃t�H���[�h��i���̓o�^��ʁj
+		String foodName = request.getParameter("foodsname");
+		
+		
+		
+
 		
 		try {
+			
+			new FoodDao().findByName(foodName);
 			
 			// ���N�G�X�g�E�p�X�����񂩂��̃G���e�B�e�B�E�I�u�W�F�N�g�𐶐�
 			Object entity = Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)).newInstance();
@@ -41,7 +50,8 @@ public class InsertAction implements Action {
 			new BaseDao().insert(entity);
 			
 			forwardPath = null;
-			response.sendRedirect(redirectPath); 
+			response.sendRedirect(redirectPath);
+			
 			
 		} catch (DaoException e) {
 			request.setAttribute("error", "[ERROR]: " + 

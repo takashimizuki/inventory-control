@@ -2,8 +2,10 @@ package jp.co.comnic.javalesson.inventory.control.dao;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.servlet.ServletException;
 
 import jp.co.comnic.javalesson.inventory.control.entity.Food;
 
@@ -18,5 +20,26 @@ public class FoodDao extends BaseDao {
 	
 	public Food findById(Integer id) {
 		return super.findById(Food.class, id);
+	}
+	
+	public Food findByName(String str) throws DaoException{
+		Food fd;
+		
+		try {
+			// Criteria API
+			// SELECT * FROM PURCHASE WHERE name = [str]
+			query.select(root)
+				 .where(builder.equal(root.get("name"), str));
+			
+			// SQLを実行し結果を格納する
+			fd = em.createQuery(query).getSingleResult();
+			
+		} catch (NoResultException e) {
+			// 結果がemptyであってたら新しくデータベースに登録する
+			fd = new Food(str);
+			new BaseDao().insert(fd);
+		}
+		
+		return fd;
 	}
 }
