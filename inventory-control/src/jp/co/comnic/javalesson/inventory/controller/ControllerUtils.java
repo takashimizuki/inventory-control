@@ -13,7 +13,9 @@ import org.apache.commons.beanutils.converters.DateConverter;
 
 import jp.co.comnic.javalesson.inventory.control.dao.AccountDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
+import jp.co.comnic.javalesson.inventory.control.dao.FoodDao;
 import jp.co.comnic.javalesson.inventory.control.entity.Account;
+import jp.co.comnic.javalesson.inventory.control.entity.Food;
 
 /**
  * <p>コントローラーの処理に関連する便利なメソッドをまとめたユーティリティ・クラス。</p>
@@ -76,8 +78,9 @@ public class ControllerUtils {
 			
 			// コンバーターの登録
 			ConvertUtils.register(dateConverter, java.util.Date.class);
-//			ConvertUtils.register(new AccountConverter(), Account.class);
-			//accountの処理には不要?
+			ConvertUtils.register(new AccountConverter(), Account.class);	//accountの処理には不要?
+			ConvertUtils.register(new FoodConverter(), Food.class);
+			
 			
 			// Apache Commons ProjectのBeanUtilsを使用して
 			// Mapオブジェクトからエンティティ・オブジェクトへ値をセット
@@ -90,31 +93,60 @@ public class ControllerUtils {
 	}
 
 	/*
-	 * リクエスト・パラメーターとして送られてきたString型のdept_idからDepartmentオブジェクト
+	 * リクエスト・パラメーターとして送られてきたString型のemailからAccountオブジェクト
 	 * に変換するBeanUtils用カスタム・コンバーター
 	 * 
-	 * accountの処理には不要?
+	 * loginの処理には不要?
 	 */
-//	private static class AccountConverter implements Converter {
-//
-//		@Override
-//		public <T> T convert(Class<T> accountClass, Object value) {
-//			
-//			T account = null;	
-//			
-//			try {
-//				
-//				account = accountClass.cast(
-//						new AccountDao().findById((String)value));
-//				
-//			} catch (NumberFormatException | DaoException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
-//			return account;
-//		}
-//	}
+	private static class AccountConverter implements Converter {
+
+		@Override
+		public <T> T convert(Class<T> accountClass, Object value) {
+			
+			T account = null;	
+			
+			try {
+				
+				account = accountClass.cast(
+						new AccountDao().findById((String)value));
+				
+			} catch (NumberFormatException | DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return account;
+		}
+	}
+	
+	/*
+	 * リクエスト・パラメーターとして送られてきたString型のidからfoodオブジェクト
+	 * に変換するBeanUtils用カスタム・コンバーター
+	 * 
+	 * Purchaseのinsertに必要？
+	 * システム上使われるだろうけど具体的なところは曖昧
+	 */
+	
+	private static class FoodConverter implements Converter {
+
+		@Override
+		public <T> T convert(Class<T> foodClass, Object value) {
+			
+			T food = null;
+			
+			try {
+				
+				food = foodClass.cast(
+						new FoodDao().findById(Integer.parseInt((String)value)));
+				
+			} catch (NumberFormatException | DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return food;
+		}
+	}
 	
 	/**
 	 * <p>データベースに関連するエラー・メッセージから最も重要な短いメッセージを取り出して返す。</p>
