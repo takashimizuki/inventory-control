@@ -50,5 +50,6 @@
 		<br>
 		<a href="login.jsp"><input id="submit_buttonb" type= "submit" value= "キャンセル"></a>
 		</article>
+	 <jsp:include page="footer.jsp"></jsp:include>
      </body>
 </html>
