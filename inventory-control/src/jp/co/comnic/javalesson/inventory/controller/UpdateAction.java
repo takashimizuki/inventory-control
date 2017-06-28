@@ -26,7 +26,7 @@ public class UpdateAction implements Action {
 		String servletPath = request.getServletPath();
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		
-		String redirectPath = "./"; // 正常処理のリダイレクト先（一覧画面）
+		String redirectPath = "main"; // 正常処理のリダイレクト先（一覧画面）
 		String forwardPath = "edit"; // 例外発生時のフォワード先（元の登録画面）
 		
 		
