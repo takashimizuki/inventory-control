@@ -11,7 +11,7 @@ import jp.co.comnic.javalesson.inventory.control.dao.AccountDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
 
 /**
- * <p>ƒƒOƒCƒ“”FØˆ—‚ğÀs‚·‚éActionƒCƒ“ƒ^[ƒtƒFƒCƒX‚ÌÀ‘•B</p>
+ * <p>ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Fï¿½Øï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Actionï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½B</p>
  * 
  * @author M.Yoneyama
  * @version 1.0
@@ -30,18 +30,19 @@ public class LoginAction implements Action {
 		String forwardPath = "login";
 		
 		try {
-			// ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç‘—‚ç‚ê‚Ä‚«‚½ƒ[ƒ‹EƒAƒhƒŒƒX‚ÆƒpƒXƒ[ƒh‚ğg—p‚µ‚Ä”FØˆ—‚ğAccountDao‚ÉˆÏ÷‚µA
-			// Œ‹‰Ê‚ğAccountƒIƒuƒWƒFƒNƒg‚Æ‚µ‚Äæ“¾
+			// ï¿½Nï¿½ï¿½ï¿½Cï¿½Aï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ç‘—ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Eï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½Æƒpï¿½Xï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½Ä”Fï¿½Øï¿½ï¿½ï¿½ï¿½ï¿½AccountDaoï¿½ÉˆÏï¿½ï¿½ï¿½ï¿½A
+			// ï¿½ï¿½ï¿½Ê‚ï¿½Accountï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Æ‚ï¿½ï¿½Äæ“¾
 			Account account = new AccountDao().loginAuthenticate(email, password);
 			
-			if (account != null) { // ƒe[ƒuƒ‹‚Éƒ}ƒbƒ`‚·‚éƒŒƒR[ƒh‚ª‘¶İ‚·‚éê‡”FØ¬Œ÷
+			if (account != null) { // ï¿½eï¿½[ï¿½uï¿½ï¿½ï¿½Éƒ}ï¿½bï¿½`ï¿½ï¿½ï¿½éƒŒï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½ï¿½ê‡ï¿½Fï¿½Øï¿½ï¿½ï¿½
 				
-				// ƒZƒbƒVƒ‡ƒ“ŠÇ—‚ğŠJn‚µAƒZƒbƒVƒ‡ƒ“‚ÌƒXƒR[ƒvEƒIƒuƒWƒFƒNƒg‚Æ‚È‚éHttpSession‚É
-				// ”FØÏ‚İ‚ğ•\‚·boolean’l‚ÆƒƒOƒCƒ“Eƒ†[ƒU[–¼‚ğƒZƒbƒg
+				// ï¿½Zï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½Jï¿½nï¿½ï¿½ï¿½Aï¿½Zï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ÌƒXï¿½Rï¿½[ï¿½vï¿½Eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Æ‚È‚ï¿½HttpSessionï¿½ï¿½
+				// ï¿½Fï¿½ØÏ‚İ‚ï¿½\ï¿½ï¿½booleanï¿½lï¿½Æƒï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½[ï¿½Uï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½g
 				request.getSession().setAttribute("isAuthenticated", "AUTHENTICATED");
 				request.getSession().setAttribute("loginUsername", account.getUsername());
+				request.getSession().setAttribute("loginEmail", email);
 				
-				// ƒgƒbƒvƒy[ƒW‚ÉƒŠƒ_ƒCƒŒƒNƒg
+				// ï¿½gï¿½bï¿½vï¿½yï¿½[ï¿½Wï¿½Éƒï¿½ï¿½_ï¿½Cï¿½ï¿½ï¿½Nï¿½g
 				forwardPath = null;
 				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/main.jsp");
 

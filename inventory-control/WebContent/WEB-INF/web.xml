@@ -14,7 +14,7 @@
     
     <context-param>
         <param-name>/edit.do</param-name>
-        <param-value>jp.co.comnic.javalesson.inventory.controller.EditAction</param-value>
+        <param-value>jp.co.comnic.javalesson.inventory.controller.UpdateAction</param-value>
     </context-param>
     
     <context-param>
@@ -30,6 +30,11 @@
     <context-param>
         <param-name>/logout.do</param-name>
         <param-value>jp.co.comnic.javalesson.inventory.controller.LogoutAction</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>/delete.do</param-name>
+        <param-value>jp.co.comnic.javalesson.inventory.controller.RemoveAction</param-value>
     </context-param>
     
     <!-- Settings for JSP pages --> 
