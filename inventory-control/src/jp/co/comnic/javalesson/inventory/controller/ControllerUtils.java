@@ -17,31 +17,15 @@ import jp.co.comnic.javalesson.inventory.control.dao.FoodDao;
 import jp.co.comnic.javalesson.inventory.control.entity.Account;
 import jp.co.comnic.javalesson.inventory.control.entity.Food;
 
-/**
- * <p>コントローラーの処理に関連する便利なメソッドをまとめたユーティリティ・クラス。</p>
- * 
- * @author M.Yoneyama
- * @version 1.0
- */
 public class ControllerUtils {
 
-	/**
-	 * <p>渡されたサーブレット・パスからエンティティの完全修飾クラス名を生成して返す。</p>
-	 * <p>
-	 * 想定されるサーブレットパスと完全一致の場合のみ正しいクラスネームを返します。
-	 * 一致しない場合は、仮としてアザーを返す。
-	 * </p>
-	 * 
-	 * @param servletPath リクエストURLに含まれるサーブレット・パス 
-	 * @return エンティティ・クラスの完全修飾クラス名
-	 */
 	public static String getFullyQualifiedClassName(String servletPath) {
 		
 		String className = "";
 		
 		if("/new-account.do".equals(servletPath)){
 			className = "Account";
-		} else if("/new.do".equals(servletPath) || "/edit.do".equals(servletPath)){
+		} else if("/new.do".equals(servletPath) || "/edit.do".equals(servletPath)|| "/remove.do".equals(servletPath)){
 			className = "Purchase";
 		} else{
 			className = "other";
@@ -51,45 +35,32 @@ public class ControllerUtils {
 		return packageName + className;
 	}
 
-	/**
-	 * <p>リクエスト・パラメーターの値からエンティティ・オブジェクトを生成して返す。</p>
-	 * 
-	 * @param request 
-	 * @param entity
-	 */
 	public static void populateEntity(HttpServletRequest request, Object entity) {
 
-		// リクエスト・パラメーターの集合をMapオブジェクトとして取得
 		Map<String, String[]> parameterMap = request.getParameterMap();
 		
-		
-		// Map<String, String>に変換
 		Map<String, String> propertyMap = new HashMap<>();
-		//idは自動振り分けなのでnullを入れておく
+		
 		propertyMap.put("id", null);
-		//emailにsessionからloginEmailを取得し格納する
+		
 		propertyMap.put("email", (String) request.getSession().getAttribute("loginEmail"));
 		for (String key : parameterMap.keySet()) {
 			propertyMap.put(key, parameterMap.get(key)[0]);
 			System.out.println(key);
-			System.out.println(parameterMap.get(key)[0]);	//確認用
+			System.out.println(parameterMap.get(key)[0]);	
 		}
 		
 
 		try {
 
-			// 日付形式への対応
 			DateConverter dateConverter = new DateConverter();
 			dateConverter.setPattern("yyyy-MM-dd");
 			
-			// コンバーターの登録
 			ConvertUtils.register(dateConverter, java.util.Date.class);
-			ConvertUtils.register(new AccountConverter(), Account.class);	//accountの処理には不要?
+			ConvertUtils.register(new AccountConverter(), Account.class);
 			ConvertUtils.register(new FoodConverter(), Food.class);
 			
 			
-			// Apache Commons ProjectのBeanUtilsを使用して
-			// Mapオブジェクトからエンティティ・オブジェクトへ値をセット
 			BeanUtils.populate(entity, propertyMap);
 			
 		} catch (IllegalAccessException | InvocationTargetException e) {
@@ -98,12 +69,6 @@ public class ControllerUtils {
 		}
 	}
 
-	/*
-	 * リクエスト・パラメーターとして送られてきたString型のemailからAccountオブジェクト
-	 * に変換するBeanUtils用カスタム・コンバーター
-	 * 
-	 * loginの処理には不要?
-	 */
 	private static class AccountConverter implements Converter {
 
 		@Override
@@ -125,14 +90,6 @@ public class ControllerUtils {
 		}
 	}
 	
-	/*
-	 * リクエスト・パラメーターとして送られてきたString型のidからfoodオブジェクト
-	 * に変換するBeanUtils用カスタム・コンバーター
-	 * 
-	 * Purchaseのinsertに必要？
-	 * システム上使われるだろうけど具体的なところは曖昧
-	 */
-	
 	private static class FoodConverter implements Converter {
 
 		@Override
@@ -153,13 +110,7 @@ public class ControllerUtils {
 			return food;
 		}
 	}
-	
-	/**
-	 * <p>データベースに関連するエラー・メッセージから最も重要な短いメッセージを取り出して返す。</p>
-	 * 
-	 * @param e 例外オブジェクト
-	 * @return 例外オブジェクトから取り出した簡略なメッセージ
-	 */
+
 	public static String getShortMessage(Throwable e) {
 
 		String errorMessage = e.getCause().getMessage().split(":")[3];
