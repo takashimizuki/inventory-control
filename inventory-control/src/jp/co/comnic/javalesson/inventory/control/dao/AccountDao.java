@@ -7,9 +7,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import jp.co.comnic.javalesson.inventory.control.entity.Account;
-/**
- * <p>�����e�[�u����CRUD�������������DAO�N���X</p>
- */
+
 public class AccountDao extends BaseDao {
 	
 	public AccountDao() throws DaoException {}
@@ -29,18 +27,16 @@ public class AccountDao extends BaseDao {
 		Account account = null;
 		
 		try {
-			// Criteria API���g�p���Ĉȉ�SQL�𐶐�����
-			// SELECT * FROM ACCOUNT WHERE email = [email] AND password = [password]
+
 			query.select(root)
 				 .where(builder.equal(root.get("email"), email), 
 						builder.equal(root.get("password"), password));
 			
-			// SQL�����s���Č��ʂ�P��̃G���e�B�e�B�E�I�u�W�F�N�g�Ƃ��Ď擾
+			
 			account = em.createQuery(query).getSingleResult();
 			
 		} catch (NoResultException e) {
-			// getSingleResult���\�b�h�͌��ʂ��Ȃ������ꍇ��NoResultException��throw
-			// ���邽�߁A���̗�O�����͕s�v
+			
 		}
 		
 		return account;

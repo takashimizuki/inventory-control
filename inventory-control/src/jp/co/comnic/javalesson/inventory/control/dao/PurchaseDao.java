@@ -27,21 +27,21 @@ public class PurchaseDao extends BaseDao {
 //		return super.findById(Purchase.class, id);
 //	}
 	
-	public Purchase ListDisplay(String email) {
-
-		Purchase purchase = null;
-		
-		try {
-			// SELECT * FROM ACCOUNT WHERE email = [email]
-			query.select(root)
-				 .where(builder.equal(root.get("email"), email));
-
-		purchase = em.createQuery(query).getSingleResult();
-			
-		} catch (NoResultException e) {
-			
-		}
-		
-		return purchase;
-	}
+//	public Purchase ListDisplay(String email) {
+//
+//		Purchase purchase = null;
+//		
+//		try {
+//			// SELECT * FROM ACCOUNT WHERE email = [email]
+//			query.select(root)
+//				 .where(builder.equal(root.get("email"), email));
+//
+//		purchase = em.createQuery(query).getSingleResult();
+//			
+//		} catch (NoResultException e) {
+//			
+//		}
+//		
+//		return purchase;
+//	}
 }
