@@ -23,6 +23,7 @@ public class FoodDao extends BaseDao {
 	}
 	
 	public Food findByName(String str) throws DaoException{
+		
 		Food fd;
 		
 		try {
@@ -31,12 +32,12 @@ public class FoodDao extends BaseDao {
 			query.select(root)
 				 .where(builder.equal(root.get("name"), str));
 			
-			// SQLを実行し結果を格納する
+			
 			fd = em.createQuery(query).getSingleResult();
 			
 			
 		} catch (NoResultException e) {
-			// 結果がemptyであってたら新しくデータベースに登録する
+			
 			fd = new Food(str);
 			new BaseDao().insert(fd);
 		}

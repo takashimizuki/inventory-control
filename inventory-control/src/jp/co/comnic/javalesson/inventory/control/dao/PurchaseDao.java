@@ -23,9 +23,9 @@ public class PurchaseDao extends BaseDao {
 		return super.findAll(query, root);
 	}
 	
-//	public Purchase findById(String id) {
-//		return super.findById(Purchase.class, id);
-//	}
+	public Purchase findById(String id) {
+		return super.findById(Purchase.class, id);
+	}
 	
 //	public Purchase ListDisplay(String email) {
 //

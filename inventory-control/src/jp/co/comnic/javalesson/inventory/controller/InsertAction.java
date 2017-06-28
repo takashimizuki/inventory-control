@@ -11,49 +11,38 @@ import jp.co.comnic.javalesson.inventory.control.dao.BaseDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
 import jp.co.comnic.javalesson.inventory.control.dao.FoodDao;
 import jp.co.comnic.javalesson.inventory.control.entity.Food;
-/**
- * <p>���R�[�h�̐V�K�}�������s����Action�C���^�[�t�F�C�X�̎����B</p>
- * 
- * @author M.Yoneyama
- * @version 1.0
- */
+
 public class InsertAction implements Action {
 
-	/* (non-Javadoc)
-	 * @see jp.co.comnic.javalesson.webapp.ems.controller.Action#execute(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 */
+	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		String servletPath = request.getServletPath();
 		
-		String redirectPath = "main"; // ���폈���̃��_�C���N�g��i�ꗗ��ʁj
-		String forwardPath = "new"; // ��O�������̃t�H���[�h��i���̓o�^��ʁj
+		String redirectPath = "main"; 
+		String forwardPath = "new"; 
 		String foodName = request.getParameter("foodsid");
 		
 		
 		try {
-			//findByName側で名前検索をし、登録済みでない場合は引数のNameを使ってinsertを行う
+			
 			Food fd = new FoodDao().findByName(foodName);
 			
 			request.setAttribute("foodsid", fd.getId());	
-//			request.setAttribute("email", request.getSession().getAttribute("loginEmail"));
-			
-//			System.out.println(request.getParameter("foodsId"));
-			
-			// ���N�G�X�g�E�p�X�����񂩂��̃G���e�B�e�B�E�I�u�W�F�N�g�𐶐�
+
 			Object entity = Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)).newInstance();
 			
-			// ���N�G�X�g�E�p�����[�^�̒l���g�p���ăG���e�B�e�B�E�I�u�W�F�N�g�̃t�B�[���h�l��ݒ�
+			
 			ControllerUtils.populateEntity(request, entity);
 			
-			// �G���e�B�e�B�E�I�u�W�F�N�g��DAO�ɓn�����ƂŐV�K���R�[�h��DB�ɑ}��
+		
 			new BaseDao().insert(entity);
 			
 			forwardPath = null;
 			response.sendRedirect(redirectPath);
-			
+			System.out.println("Insert");
 			
 		} catch (DaoException e) {
 			request.setAttribute("error", "[ERROR]: " + 
