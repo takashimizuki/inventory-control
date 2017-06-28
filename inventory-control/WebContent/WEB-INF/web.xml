@@ -24,7 +24,7 @@
     
     <context-param>
         <param-name>/new.do</param-name>
-        <param-value>jp.co.comnic.javalesson.inventory.controller.NewAction</param-value>
+        <param-value>jp.co.comnic.javalesson.inventory.controller.InsertAction</param-value>
     </context-param>
     
     <context-param>

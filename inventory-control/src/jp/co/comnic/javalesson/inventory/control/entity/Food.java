@@ -2,6 +2,7 @@ package jp.co.comnic.javalesson.inventory.control.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -18,6 +19,10 @@ public class Food implements Serializable {
 	private int id;
 
 	private String name;
+
+	//bi-directional many-to-one association to Purchase
+	@OneToMany(mappedBy="food")
+	private List<Purchase> purchases;
 
 	public Food() {
 	}
@@ -36,6 +41,28 @@ public class Food implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Purchase> getPurchases() {
+		return this.purchases;
+	}
+
+	public void setPurchases(List<Purchase> purchases) {
+		this.purchases = purchases;
+	}
+
+	public Purchase addPurchas(Purchase purchas) {
+		getPurchases().add(purchas);
+		purchas.setFood(this);
+
+		return purchas;
+	}
+
+	public Purchase removePurchas(Purchase purchas) {
+		getPurchases().remove(purchas);
+		purchas.setFood(null);
+
+		return purchas;
 	}
 
 }

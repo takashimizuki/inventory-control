@@ -2,6 +2,7 @@ package jp.co.comnic.javalesson.inventory.control.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -19,6 +20,10 @@ public class Account implements Serializable {
 	private String password;
 
 	private String username;
+
+	//bi-directional many-to-one association to Purchase
+	@OneToMany(mappedBy="account")
+	private List<Purchase> purchases;
 
 	public Account() {
 	}
@@ -45,6 +50,28 @@ public class Account implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public List<Purchase> getPurchases() {
+		return this.purchases;
+	}
+
+	public void setPurchases(List<Purchase> purchases) {
+		this.purchases = purchases;
+	}
+
+	public Purchase addPurchas(Purchase purchas) {
+		getPurchases().add(purchas);
+		purchas.setAccount(this);
+
+		return purchas;
+	}
+
+	public Purchase removePurchas(Purchase purchas) {
+		getPurchases().remove(purchas);
+		purchas.setAccount(null);
+
+		return purchas;
 	}
 
 }
