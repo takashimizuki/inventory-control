@@ -27,20 +27,13 @@ public class PurchaseDao extends BaseDao {
 //		return super.findById(Purchase.class, id);
 //	}
 	
-	public Purchase ListDisplay(String email, String foodsId,String price,String quantity,String date,String consumptionDatepassword) {
+	public Purchase ListDisplay(String email) {
 
 		Purchase purchase = null;
 		
 		try {
 			query.select(root)
-				 .where(builder.equal(root.get("email"), email), 
-						builder.equal(root.get("foodsId"), foodsId));
-						builder.equal(root.get("price"), price);
-						builder.equal(root.get("quantity"), quantity);
-						builder.equal(root.get("date"), date);
-						builder.equal(root.get("consumptionDatepassword"), consumptionDatepassword);
-						
-		System.out.println("builder.equal");
+				 .where(builder.equal(root.get("email"), email));
 
 		purchase = em.createQuery(query).getSingleResult();
 			

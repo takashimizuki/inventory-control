@@ -18,41 +18,35 @@ public class ListDisplayAction implements Action{
 		
 		
 		String email = request.getParameter("email");
-		String foodsId = request.getParameter("foodsId");
-		String price = request.getParameter("price");
-		String quantity = request.getParameter("quantity");
-		String date = request.getParameter("purchaseDate");
-		String consumptionDate = request.getParameter("consumptionDate");
-		
+//		String foodsId = request.getParameter("foodsId");
+//		String price = request.getParameter("price");
+//		String quantity = request.getParameter("quantity");
+//		String date = request.getParameter("purchaseDate");
+//		String consumptionDate = request.getParameter("consumptionDate");
 		String forwardPath = "ListDisplay";
 		
 		
 		try {
 			
-			Purchase purchase = new PurchaseDao().ListDisplay(email, foodsId, price, quantity, date, consumptionDate);
+			Purchase purchase = new PurchaseDao().ListDisplay(email);
 			
-			if (purchase != null) {
 				
-				request.getSession().setAttribute("purchaseemail", purchase.getEmail());
-				request.getSession().setAttribute("purchasefoodsId", purchase.getFoodsId());
-				request.getSession().setAttribute("purchaseprice", purchase.getPrice());
-				request.getSession().setAttribute("purchasequantity", purchase.getQuantity());
-				request.getSession().setAttribute("purchasepurchaseDate", purchase.getDate());
-				request.getSession().setAttribute("purchaseconsumptionDate", purchase.getConsumptionDate());
+			request.getSession().setAttribute("purchaseemail", purchase.getEmail());
+//			request.getSession().setAttribute("purchasefoodsId", purchase.getFoodsId());
+//			request.getSession().setAttribute("purchaseprice", purchase.getPrice());
+//			request.getSession().setAttribute("purchasequantity", purchase.getQuantity());
+//			request.getSession().setAttribute("purchasepurchaseDate", purchase.getDate());
+//			request.getSession().setAttribute("purchaseconsumptionDate", purchase.getConsumptionDate());	
+			System.out.println("request.getSession().setAttribute");
 				
-				System.out.println("request.getSession().setAttribute");
+			response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
 				
-				response.sendRedirect("/" + request.getServletContext().getServletContextName() + "/");
+			forwardPath = null;
 				
-				forwardPath = null;
-				
-			} else { 
-				request.setAttribute("error", "[ERROR] Invalid e-mail or password.");
-			}
 			
 		} catch (Exception e) {
 			throw new ServletException(e);
-		}
+		} 
 		
 		return forwardPath;
 	}
