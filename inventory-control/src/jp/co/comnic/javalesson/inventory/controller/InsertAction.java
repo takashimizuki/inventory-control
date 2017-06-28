@@ -30,15 +30,17 @@ public class InsertAction implements Action {
 		
 		String redirectPath = "main"; // ���폈���̃��_�C���N�g��i�ꗗ��ʁj
 		String forwardPath = "new"; // ��O�������̃t�H���[�h��i���̓o�^��ʁj
-		String foodName = request.getParameter("foodsname");
+		String foodName = request.getParameter("foodsid");
 		
-		
-		
-
 		
 		try {
+			//findByName側で名前検索をし、登録済みでない場合は引数のNameを使ってinsertを行う
+			Food fd = new FoodDao().findByName(foodName);
 			
-			new FoodDao().findByName(foodName);
+			request.setAttribute("foodsid", fd.getId());	
+//			request.setAttribute("email", request.getSession().getAttribute("loginEmail"));
+			
+//			System.out.println(request.getParameter("foodsId"));
 			
 			// ���N�G�X�g�E�p�X�����񂩂��̃G���e�B�e�B�E�I�u�W�F�N�g�𐶐�
 			Object entity = Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)).newInstance();

@@ -62,13 +62,19 @@ public class ControllerUtils {
 		// リクエスト・パラメーターの集合をMapオブジェクトとして取得
 		Map<String, String[]> parameterMap = request.getParameterMap();
 		
+		
 		// Map<String, String>に変換
 		Map<String, String> propertyMap = new HashMap<>();
+		//idは自動振り分けなのでnullを入れておく
+		propertyMap.put("id", null);
+		//emailにsessionからloginEmailを取得し格納する
+		propertyMap.put("email", (String) request.getSession().getAttribute("loginEmail"));
 		for (String key : parameterMap.keySet()) {
 			propertyMap.put(key, parameterMap.get(key)[0]);
 			System.out.println(key);
 			System.out.println(parameterMap.get(key)[0]);	//確認用
 		}
+		
 
 		try {
 

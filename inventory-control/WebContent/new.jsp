@@ -16,7 +16,7 @@
        	<tr>
 		<th>
 		<h3>商品名</h3>
-		<input type="text" name="foodsname">
+		<input type="text" name="foodsid">
 		</th>
 		<td>
 		<h3>購入日</h3>

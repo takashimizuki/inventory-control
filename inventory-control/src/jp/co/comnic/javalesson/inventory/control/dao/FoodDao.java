@@ -34,6 +34,7 @@ public class FoodDao extends BaseDao {
 			// SQLを実行し結果を格納する
 			fd = em.createQuery(query).getSingleResult();
 			
+			
 		} catch (NoResultException e) {
 			// 結果がemptyであってたら新しくデータベースに登録する
 			fd = new Food(str);

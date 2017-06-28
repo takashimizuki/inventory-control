@@ -43,6 +43,8 @@ public class NewAccountAction implements Action {
 			// baseDaoのinsertにオブジェクトを渡す
 			new BaseDao().insert(entity);
 			
+			request.setAttribute("error", "正常にアカウントを作成できました。");
+			
 			forwardPath = null;
 			response.sendRedirect(redirectPath); 
 			
