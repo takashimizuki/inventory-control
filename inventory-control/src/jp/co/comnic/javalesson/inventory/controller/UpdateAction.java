@@ -8,17 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import jp.co.comnic.javalesson.inventory.control.dao.BaseDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
-/**
- * <p>レコードの更新処理を実行するActionインターフェイスの実装。</p>
- * 
- * @author M.Yoneyama
- * @version 1.0
- */
+
+
 public class UpdateAction implements Action {
 
-	/* (non-Javadoc)
-	 * @see jp.co.comnic.javalesson.webapp.ems.controller.Action#execute(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 */
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -28,7 +21,6 @@ public class UpdateAction implements Action {
 		
 		String redirectPath = "main"; // 正常処理のリダイレクト先（一覧画面）
 		String forwardPath = "edit"; // 例外発生時のフォワード先（元の登録画面）
-		
 		
 		try {
 			
