@@ -12,7 +12,7 @@
      <article>
 	 <form action="new.do" method="post">
      <h1>新規</h1><br>    	
-     <table id="tablea">
+     <table id="newtable">
        	<tr>
 		<th>
 		<h3>商品名</h3>
@@ -20,7 +20,7 @@
 		</th>
 		<td>
 		<h3>購入日</h3>
-		<input type="date" name="date" min="2017-07-01">
+		<input type="date" name="date" min="2017-06-01">
 		</td>
 		</tr>
 		<tr>		
@@ -30,7 +30,7 @@
 		</th>
 		<td>
 		<h3>消費期限</h3>
-		<input type="date" name="consumptionDate" min="2017-07-01">
+		<input type="date" name="consumptionDate" min="2017-06-01">
 		</td>
 		<tr>
 		<th>

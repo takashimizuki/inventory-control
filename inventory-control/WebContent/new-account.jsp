@@ -12,7 +12,7 @@
      	<article>
         <form action="new-account.do" method="post">
 		<h1>新規会員登録</h1><br>
-     <table id="tableb">
+     <table id="logintable">
 		<tr>
 		<th>
 			<h3>メールアドレス</h3>

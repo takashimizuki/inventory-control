@@ -12,7 +12,7 @@
      <article>
      <form action="login.do" method="post">
 		<h1>ログイン</h1><br>
-     <table id="tableb">
+     <table id="logintable">
 		<tr>
 		<th>
 			<h3>メールアドレス</h3>
