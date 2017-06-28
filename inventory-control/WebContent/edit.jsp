@@ -26,7 +26,7 @@
 		<tr>		
 		<th>
 		<h3>値段</h3>
-		<input type="text" name="price"> 円
+		<input type="text" name="price">
 		</th>
 		<td>
 		<h3>消費期限</h3>
