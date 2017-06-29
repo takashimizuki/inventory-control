@@ -17,20 +17,20 @@ public class UpdateAction implements Action {
 			throws ServletException, IOException {
 		
 		String servletPath = request.getServletPath();
-		Integer id = Integer.parseInt(request.getParameter("id"));
+		Integer id = Integer.parseInt((String)request.getParameter("id"));
 		
-		String redirectPath = "main"; // ³íˆ—‚ÌƒŠƒ_ƒCƒŒƒNƒgæiˆê——‰æ–Êj
-		String forwardPath = "edit"; // —áŠO”­¶‚ÌƒtƒHƒ[ƒhæiŒ³‚Ì“o˜^‰æ–Êj
+		String redirectPath = "main"; // ï¿½ï¿½ï¿½íˆï¿½ï¿½ï¿½Ìƒï¿½ï¿½_ï¿½Cï¿½ï¿½ï¿½Nï¿½gï¿½ï¿½iï¿½ê——ï¿½ï¿½Êj
+		String forwardPath = "edit"; // ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒtï¿½Hï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½iï¿½ï¿½ï¿½Ì“oï¿½^ï¿½ï¿½Êj
 		
 		try {
 			
 			BaseDao dao = new BaseDao();
 			
-			// ƒŠƒNƒGƒXƒgEƒpƒ‰ƒ[ƒ^[‚Å“n‚³‚ê‚½ID‚©‚çƒGƒ“ƒeƒBƒeƒBEƒIƒuƒWƒFƒNƒg‚ğæ“¾
+			// ï¿½ï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½Eï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½[ï¿½Å“nï¿½ï¿½ï¿½ê‚½IDï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½eï¿½Bï¿½eï¿½Bï¿½Eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½æ“¾
 			Object entity = dao.findById(
 					Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)), id);
 			
-			// ƒŠƒNƒGƒXƒgEƒpƒ‰ƒ[ƒ^‚Ì’l‚ğg—p‚µ‚ÄƒGƒ“ƒeƒBƒeƒBEƒIƒuƒWƒFƒNƒg‚ÌƒtƒB[ƒ‹ƒh’l‚ğİ’è
+			// ï¿½ï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½Eï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½Ì’lï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ÄƒGï¿½ï¿½ï¿½eï¿½Bï¿½eï¿½Bï¿½Eï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìƒtï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½lï¿½ï¿½İ’ï¿½
 			ControllerUtils.populateEntity(request, entity);
 			
 			new BaseDao().update(entity);

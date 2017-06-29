@@ -39,6 +39,7 @@ public class FoodDao extends BaseDao {
 			
 			fd = new Food(str);
 			new BaseDao().insert(fd);
+			fd = this.findByName(str);
 		}
 		
 		return fd;
