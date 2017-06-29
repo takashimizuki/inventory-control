@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
 <!DOCTYPE html>
 <html>
@@ -47,7 +48,7 @@
 	 	<input id="submit_buttonc" type="reset" value= "リセット">
 	 	</th>
 	 	<td>
-	    <a href="edit.do?id=${id}">
+	    <a href="edit.do?id=${param.id}">
 		<input id="submit_buttond" type= "submit" value= "決定">
 		</a>
 		</td>
