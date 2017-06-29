@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import javax.servlet.ServletException;
 
 import jp.co.comnic.javalesson.inventory.control.entity.Food;
 

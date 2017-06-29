@@ -7,10 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jp.co.comnic.javalesson.inventory.control.dao.AccountDao;
 import jp.co.comnic.javalesson.inventory.control.dao.BaseDao;
 import jp.co.comnic.javalesson.inventory.control.dao.DaoException;
 import jp.co.comnic.javalesson.inventory.control.dao.FoodDao;
+import jp.co.comnic.javalesson.inventory.control.entity.Account;
 import jp.co.comnic.javalesson.inventory.control.entity.Food;
+import jp.co.comnic.javalesson.inventory.control.entity.Purchase;
 
 public class InsertAction implements Action {
 
@@ -19,7 +22,7 @@ public class InsertAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String servletPath = request.getServletPath();
+//		String servletPath = request.getServletPath();
 		
 		String redirectPath = "main"; 
 		String forwardPath = "new"; 
@@ -32,8 +35,10 @@ public class InsertAction implements Action {
 			
 			request.setAttribute("fdid", fd.getId());	
 
-			Object entity = Class.forName(ControllerUtils.getFullyQualifiedClassName(servletPath)).newInstance();
+			Purchase entity = new Purchase();
 			
+			entity.setAccount(new AccountDao().findById((String) request.getSession().getAttribute("loginEmail")));
+			entity.setFood(fd);
 			
 			ControllerUtils.populateEntity(request, entity);
 			

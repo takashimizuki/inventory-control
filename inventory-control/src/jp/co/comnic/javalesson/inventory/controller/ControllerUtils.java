@@ -43,10 +43,10 @@ public class ControllerUtils {
 		
 		for (String key : parameterMap.keySet()) {
 			propertyMap.put(key, parameterMap.get(key)[0]);
-			System.out.println(key);
-			System.out.println(parameterMap.get(key)[0]);	
 		}
+		System.out.println(propertyMap);
 		
+		//food
 		if(request.getAttribute("fdid") != null){
 			propertyMap.put("id", null);
 			propertyMap.put("email", (String) request.getSession().getAttribute("loginEmail"));
