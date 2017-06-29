@@ -28,6 +28,7 @@ public class MainController extends HttpServlet {
 	 * @throws IOException
 	 */
 	protected void doService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		// ActionFactoryのgetActionにサーブレットパスを渡すことで適切なアクションクラスのインスタンスを生成する
 		Action action = ActionFactory.getAction(request.getServletPath());
 		// 適切なアクションに値を渡し、フォワードパスを得る
