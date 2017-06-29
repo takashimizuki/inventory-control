@@ -47,7 +47,9 @@
 	 	<input id="submit_buttonc" type="reset" value= "リセット">
 	 	</th>
 	 	<td>
+	    <a href="edit.do?id=${id}">
 		<input id="submit_buttond" type= "submit" value= "決定">
+		</a>
 		</td>
 		</table>
 		</form>
