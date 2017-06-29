@@ -34,7 +34,7 @@ public class LoginAction implements Action {
 			// ���ʂ�Account�I�u�W�F�N�g�Ƃ��Ď擾
 			Account account = new AccountDao().loginAuthenticate(email, password);
 			
-			if (account != null) { // �e�[�u���Ƀ}�b�`���郌�R�[�h�����݂���ꍇ�F�ؐ���
+			if (account != null && email != "" && password != "") { // �e�[�u���Ƀ}�b�`���郌�R�[�h�����݂���ꍇ�F�ؐ���
 				
 				// �Z�b�V�����Ǘ����J�n���A�Z�b�V�����̃X�R�[�v�E�I�u�W�F�N�g�ƂȂ�HttpSession��
 				// �F�؍ς݂�\��boolean�l�ƃ��O�C���E���[�U�[�����Z�b�g
