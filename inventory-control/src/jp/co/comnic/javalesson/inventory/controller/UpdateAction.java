@@ -18,8 +18,9 @@ public class UpdateAction implements Action {
 		
 		String servletPath = request.getServletPath();
 //		Integer id = Integer.parseInt((String)request.getParameter("id"));
-		String id = request.getParameter("id");
-		System.out.println("id");
+//		String id = request.getParameter("id");
+		Integer id = Integer.parseInt(request.getParameter("id"));
+
 		String redirectPath = "main"; 
 		String forwardPath = "edit"; 
 		

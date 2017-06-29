@@ -11,7 +11,7 @@
      <body>
      <jsp:include page="header.jsp"></jsp:include>
 	 <article>
-	 <form action="edit.do" method="post">
+	 <form action="edit.do?id=${param.id}" method="post">
      <h1>変更</h1><br>
      <table id="newtable">
        	<tr>
@@ -48,9 +48,7 @@
 	 	<input id="submit_buttonc" type="reset" value= "リセット">
 	 	</th>
 	 	<td>
-	    <a href="edit.do?id=${param.id}">
 		<input id="submit_buttond" type= "submit" value= "決定">
-		</a>
 		</td>
 		</table>
 		</form>
